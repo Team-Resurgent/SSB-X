@@ -1,0 +1,16 @@
+{
+  "gain": [
+    1.02515,
+    1.01255,
+    1.02849
+  ],
+  "offset": [
+    0.1606,
+    -0.1619,
+    -0.0674
+  ],
+  "fitted_to": "Flycast fbdump frame 150, 16 variants, 775769 pixels",
+  "fitted": "2026-09-29",
+  "before_db": 35.98,
+  "after_db": 38.73
+}

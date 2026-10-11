@@ -1,0 +1,24 @@
+diff --git a/src/ft/fttypes.h b/src/ft/fttypes.h
+index c59c9c3cb..8ec2ccf22 100644
+--- a/src/ft/fttypes.h
++++ b/src/ft/fttypes.h
+@@ -15,7 +15,6 @@
+ #include <ft/ftdef.h>
+ 
+ #include <ft/ftcommon.h>
+-#include <ft/ftchar.h>
+ 
+ // Structs
+ struct FTSpecialColl
+@@ -512,6 +511,11 @@ struct FTStatusDesc
+     void (*proc_map)(GObj*);
+ };
+ 
++// The per-character headers declare arrays of FTStatusDesc and FTMotionDesc,
++// so they come after both are complete: an array of an incomplete element
++// type is a constraint violation that IDO lets through and GCC does not.
++#include <ft/ftchar.h>
++
+ struct FTOpeningDesc
+ {
+     s32 motion_id;

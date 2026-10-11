@@ -1,0 +1,418 @@
+docker/patches/0001-aobj-event-bitfields-follow-the-abi.patch	DERIVED	patch to decomp sys/objanim.h; context and changed lines are decomp header text
+docker/patches/0002-declare-gcParseMObjMatAnimJoint.patch	DERIVED	patch to decomp sys/objanim.h; context lines are decomp header text
+docker/patches/0003-ftchar-headers-after-the-types-they-declare-arrays-of.patch	DERIVED	patch to decomp ft headers; context lines are decomp header text
+docker/patches/0004-ftanimdesc-bitfields-follow-the-abi.patch	DERIVED	patch to decomp FTAnimDesc struct; context lines are decomp header text
+docker/patches/0005-motion-event-bitfields-follow-the-abi.patch	DERIVED	patch to decomp motion-event structs; context lines are decomp header text
+docker/patches/0006-colanim-event-bitfields-follow-the-abi.patch	DERIVED	patch to decomp colanim-event structs; context lines are decomp header text
+src/dc/aica/fwblob.S	ORIGINAL	links the AICA firmware binary into the SH-4 program
+src/dc/aica/main.c	ORIGINAL	AICA firmware main loop serving KOS's command queue; links KOS crt0.s/aica.c at build time
+src/dc/aica/seqsyn.c	ORIGINAL	the music sequencer's voices on the ARM and the voices' reverb sends; the voices' synth in integers through KOS aica.c
+src/dc/aica/seqsyn.h	ORIGINAL	the ARM voices' API
+src/dc/aica/shared.h	ORIGINAL	what the SH-4 and the port's AICA firmware agree on: status block, commands, bank image, reverb ring layout
+src/dc/aicamix.h	ORIGINAL	AICA mix headroom constants
+src/dc/assetroot.c	ORIGINAL	disc/romdisk asset I/O layer, KOS
+src/dc/assetroot.h	ORIGINAL	asset path/IO API
+src/dc/be.h	ORIGINAL	big-endian accessors
+src/dc/bgm.c	MIXED	AICA BGM thread original; syAudio* BGM status machine ported from sys/audio.c syAudioThreadMain
+src/dc/bgm.h	MIXED	port API; syAudio* BGM declarations from sys/audio.h
+src/dc/bgmarm.c	ORIGINAL	the SH-4's half of the ARM sequencer: bank image in sound RAM, commands, the reverb's DSP upload
+src/dc/bgmarm.h	ORIGINAL	the SH-4 half's API
+src/dc/bgmbank.c	ORIGINAL	music bank loader into AICA RAM
+src/dc/bgmbank.h	ORIGINAL	music bank format (port exporter)
+src/dc/camanim.c	ORIGINAL	camera-anim bank loader (port format)
+src/dc/camanim.h	ORIGINAL	camera-anim bank API
+src/dc/clip.c	ORIGINAL	clip-space polygon clipper
+src/dc/clip.h	ORIGINAL	clipper API
+src/dc/db.c	ORIGINAL	port debug facility/probes; calls decomp code, no ported bodies found (large file, spot-checked)
+src/dc/db.h	ORIGINAL	debug facility API
+src/dc/dcaica.c	ORIGINAL	loads the port's AICA firmware in place of KOS stream.drv, and a DSP program with its ring
+src/dc/dcaica.h	ORIGINAL	AICA firmware loader API
+src/dc/dcmemcard.c	ORIGINAL	port-only VMU scene
+src/dc/dcmemcard.h	ORIGINAL	port-only VMU scene
+src/dc/dcpvr.h	ORIGINAL	PVR init config
+src/dc/dcstrings.h	ORIGINAL	port-only UI strings
+src/dc/dctext.c	ORIGINAL	port text renderer using game glyphs
+src/dc/dctext.h	ORIGINAL	port text API
+src/dc/decomp/PR/os.h	SGI	shim of libultra os.h declarations
+src/dc/decomp/PR/ultratypes.h	SGI	shim of libultra ultratypes.h typedefs
+src/dc/decomp/README.md	ORIGINAL	documentation
+src/dc/decomp/gr/grcommon/grjungle.h	DERIVED	shim copying decomp header declarations
+src/dc/decomp/gr/grcommon/gryamabuki.h	DERIVED	shim copying decomp header declarations
+src/dc/decomp/gr/ground.h	DERIVED	shim of decomp gr/ground.h declarations
+src/dc/decomp/macros.h	DERIVED	shim wrapping decomp macros.h
+src/dc/decomp/reloc_data.h	DERIVED	shim of decomp reloc_data.h
+src/dc/decomp/sc/scene.h	DERIVED	shim of decomp sc/scene.h
+src/dc/decomp/sys/utils.h	DERIVED	shim of decomp sys/utils.h
+src/dc/disctrace.c	ORIGINAL	disc read tracer
+src/dc/disctrace.h	ORIGINAL	disc read tracer
+src/dc/dma.c	ORIGINAL	syDmaReadRom replacement over file I/O
+src/dc/dma.h	ORIGINAL	DMA replacement API
+src/dc/efdisplay.c	DERIVED	ported ef display procs
+src/dc/efground.c	DERIVED	ported ef/efground.c
+src/dc/efground.h	ORIGINAL	port-side ground-actor asset decls
+src/dc/efmanager.c	DERIVED	ported decomp functions/data (efmanager)
+src/dc/efmanager.h	ORIGINAL	port effect-bank loader decls
+src/dc/fgm.c	DERIVED	port of the game FGM bytecode interpreters (n_env.c func_80026B90 etc.), line for line in parts
+src/dc/fgm.h	DERIVED	FGM engine structs mirror decomp layout
+src/dc/fighter.c	ORIGINAL	fighter pack loader/PVR renderer
+src/dc/fighter.h	ORIGINAL	port pack format; a few decomp flag encodings kept
+src/dc/ftcommon.c	DERIVED	ported decomp functions/data (ftcommon)
+src/dc/ftcommon.h	DERIVED	ported decomp declarations (ftcommon)
+src/dc/ftcommontaru.c	DERIVED	ported decomp functions/data (ftcommontaru)
+src/dc/ftcommontwister.c	DERIVED	ported decomp functions/data (ftcommontwister)
+src/dc/ftcomputer.c	DERIVED	ported decomp functions/data (ftcomputer)
+src/dc/ftdisplaymain.c	DERIVED	ported decomp functions/data (ftdisplaymain)
+src/dc/ftdisplaymain.h	DERIVED	decls of ported ftdisplaymain.c
+src/dc/ftmain.c	DERIVED	ported decomp functions/data (ftmain)
+src/dc/ftmanager.c	DERIVED	ported decomp functions/data (ftmanager)
+src/dc/ftparam.c	DERIVED	ported decomp functions/data (ftparam)
+src/dc/ftshade.h	ORIGINAL	vertex lighting math (cites lbCommonSin)
+src/dc/ftshadow.c	DERIVED	ported decomp functions/data (ftshadow)
+src/dc/ftshadow.h	MIXED	decomp decls + port shadow log
+src/dc/gmcamera.c	DERIVED	ported decomp functions/data (gmcamera)
+src/dc/gmcamera.h	DERIVED	ported decomp declarations (gmcamera)
+src/dc/gmcommon.c	DERIVED	gm/gmcommon.c table + loader verbatim
+src/dc/gmcommon.h	DERIVED	gm/gmcommon.c decls
+src/dc/gmrumble.c	DERIVED	ported decomp functions/data (gmrumble)
+src/dc/grbonus3.c	DERIVED	ported decomp functions/data (grbonus3)
+src/dc/grcastle.c	DERIVED	ported decomp functions/data (grcastle)
+src/dc/grhyrule.c	DERIVED	ported decomp functions/data (grhyrule)
+src/dc/grinishie.c	DERIVED	ported decomp functions/data (grinishie)
+src/dc/grjungle.c	DERIVED	ported decomp functions/data (grjungle)
+src/dc/grpupupu.c	DERIVED	ported decomp functions/data (grpupupu)
+src/dc/grsector.c	DERIVED	ported decomp functions/data (grsector)
+src/dc/grwallpaper.h	MIXED	wallpaper placement math transcribed from gr/grwallpaper.c
+src/dc/gryamabuki.c	DERIVED	ported decomp functions/data (gryamabuki)
+src/dc/gryoster.c	DERIVED	ported decomp functions/data (gryoster)
+src/dc/grzebes.c	DERIVED	ported decomp functions/data (grzebes)
+src/dc/ifcommon.c	DERIVED	ported decomp functions/data (ifcommon)
+src/dc/ifcommon.h	DERIVED	ported decomp declarations (ifcommon)
+src/dc/ifscreenflash.c	DERIVED	ported decomp functions/data (ifscreenflash)
+src/dc/input.c	MIXED	maple input original; edge/repeat logic transcribed from sys/controller.c
+src/dc/input.h	ORIGINAL	input API
+src/dc/introcrowd.c	ORIGINAL	baked crowd sprites
+src/dc/introcrowd.h	ORIGINAL	baked crowd sprites
+src/dc/itbat.c	DERIVED	ported decomp functions/data (itbat)
+src/dc/itbombhei.c	DERIVED	ported decomp functions/data (itbombhei)
+src/dc/itbox.c	DERIVED	ported decomp functions/data (itbox)
+src/dc/itcapsule.c	DERIVED	ported decomp functions/data (itcapsule)
+src/dc/itdisplay.c	DERIVED	ported decomp functions/data (itdisplay)
+src/dc/itdogas.c	DERIVED	ported decomp functions/data (itdogas)
+src/dc/itegg.c	DERIVED	ported decomp functions/data (itegg)
+src/dc/itemmodel.c	ORIGINAL	item model pack table (exporter-generated) and binder
+src/dc/itemmodel.h	ORIGINAL	item model API
+src/dc/itemoffsets.h	DERIVED	offsets of decomp llITCommonData* symbols
+src/dc/itempack.c	ORIGINAL	item pack reader
+src/dc/itempack.h	ORIGINAL	item pack format
+src/dc/itfflower.c	DERIVED	ported decomp functions/data (itfflower)
+src/dc/itfushigibana.c	DERIVED	ported decomp functions/data (itfushigibana)
+src/dc/itgbumper.c	DERIVED	ported decomp functions/data (itgbumper)
+src/dc/itglucky.c	DERIVED	ported decomp functions/data (itglucky)
+src/dc/itgshell.c	DERIVED	ported decomp functions/data (itgshell)
+src/dc/ithammer.c	DERIVED	ported decomp functions/data (ithammer)
+src/dc/itharisen.c	DERIVED	ported decomp functions/data (itharisen)
+src/dc/itheart.c	DERIVED	ported decomp functions/data (itheart)
+src/dc/ithitokage.c	DERIVED	ported decomp functions/data (ithitokage)
+src/dc/itiwark.c	DERIVED	ported decomp functions/data (itiwark)
+src/dc/itkabigon.c	DERIVED	ported decomp functions/data (itkabigon)
+src/dc/itkamex.c	DERIVED	ported decomp functions/data (itkamex)
+src/dc/itlgun.c	DERIVED	ported decomp functions/data (itlgun)
+src/dc/itlizardon.c	DERIVED	ported decomp functions/data (itlizardon)
+src/dc/itmain.c	DERIVED	ported decomp functions/data (itmain)
+src/dc/itmanager.c	DERIVED	ported decomp functions/data (itmanager)
+src/dc/itmap.c	DERIVED	ported decomp functions/data (itmap)
+src/dc/itmarumine.c	DERIVED	ported decomp functions/data (itmarumine)
+src/dc/itmball.c	DERIVED	ported decomp functions/data (itmball)
+src/dc/itmew.c	DERIVED	ported decomp functions/data (itmew)
+src/dc/itmlucky.c	DERIVED	ported decomp functions/data (itmlucky)
+src/dc/itmonster.h	DERIVED	shared Poke Ball monster decls from decomp
+src/dc/itmsbomb.c	DERIVED	ported decomp functions/data (itmsbomb)
+src/dc/itnbumper.c	DERIVED	ported decomp functions/data (itnbumper)
+src/dc/itnyars.c	DERIVED	ported decomp functions/data (itnyars)
+src/dc/itpakkun.c	DERIVED	ported decomp functions/data (itpakkun)
+src/dc/itpippi.c	DERIVED	ported decomp functions/data (itpippi)
+src/dc/itporygon.c	DERIVED	ported decomp functions/data (itporygon)
+src/dc/itpowerblock.c	DERIVED	ported decomp functions/data (itpowerblock)
+src/dc/itprocess.c	DERIVED	ported decomp functions/data (itprocess)
+src/dc/itrshell.c	DERIVED	ported decomp functions/data (itrshell)
+src/dc/itsawamura.c	DERIVED	ported decomp functions/data (itsawamura)
+src/dc/itspear.c	DERIVED	ported decomp functions/data (itspear)
+src/dc/itstar.c	DERIVED	ported decomp functions/data (itstar)
+src/dc/itstarmie.c	DERIVED	ported decomp functions/data (itstarmie)
+src/dc/itstarrod.c	DERIVED	ported decomp functions/data (itstarrod)
+src/dc/itsword.c	DERIVED	ported decomp functions/data (itsword)
+src/dc/ittarget.c	DERIVED	ported decomp functions/data (ittarget)
+src/dc/ittaru.c	DERIVED	ported decomp functions/data (ittaru)
+src/dc/ittarubomb.c	DERIVED	ported decomp functions/data (ittarubomb)
+src/dc/ittomato.c	DERIVED	ported decomp functions/data (ittomato)
+src/dc/ittosakinto.c	DERIVED	ported decomp functions/data (ittosakinto)
+src/dc/itvisuals.c	DERIVED	ported decomp functions/data (itvisuals)
+src/dc/lbcommon.c	DERIVED	ported decomp functions/data (lbcommon)
+src/dc/lbcommon.h	DERIVED	ported decomp declarations (lbcommon)
+src/dc/lbfade.c	DERIVED	ported decomp functions/data (lbfade)
+src/dc/lbpartex.c	ORIGINAL	particle texture reader
+src/dc/lbpartex.h	ORIGINAL	particle texture format
+src/dc/lbparticle.c	DERIVED	ported decomp functions/data (lbparticle)
+src/dc/lbparticle.h	DERIVED	decls of ported lb/lbparticle.c
+src/dc/lbpdraw.c	ORIGINAL	RDP-emulating particle draw model
+src/dc/lbpdraw.h	ORIGINAL	particle RDP emulation API
+src/dc/lbptrace.h	ORIGINAL	particle trace record
+src/dc/lbtransition.c	DERIVED	ported decomp functions/data (lbtransition)
+src/dc/loadcensus.c	ORIGINAL	load census
+src/dc/loadcensus.h	ORIGINAL	load census
+src/dc/mn1pcontinue.c	DERIVED	ported decomp functions/data (mn1pcontinue)
+src/dc/mn1pcontinue.h	DERIVED	ported decomp declarations (mn1pcontinue)
+src/dc/mn1pmode.c	DERIVED	ported decomp functions/data (mn1pmode)
+src/dc/mn1pmode.h	DERIVED	ported decomp declarations (mn1pmode)
+src/dc/mnbackupclear.c	DERIVED	ported decomp functions/data (mnbackupclear)
+src/dc/mnbackupclear.h	DERIVED	ported decomp declarations (mnbackupclear)
+src/dc/mncharacters.c	DERIVED	ported decomp functions/data (mncharacters)
+src/dc/mncharacters.h	DERIVED	ported decomp declarations (mncharacters)
+src/dc/mncongra.c	DERIVED	ported decomp functions/data (mncongra)
+src/dc/mncongra.h	DERIVED	ported decomp declarations (mncongra)
+src/dc/mndata.c	DERIVED	ported decomp functions/data (mndata)
+src/dc/mndata.h	DERIVED	ported decomp declarations (mndata)
+src/dc/mnmaps.c	DERIVED	ported decomp functions/data (mnmaps)
+src/dc/mnmaps.h	DERIVED	ported decomp declarations (mnmaps)
+src/dc/mnmessage.c	DERIVED	ported decomp functions/data (mnmessage)
+src/dc/mnmessage.h	DERIVED	ported decomp declarations (mnmessage)
+src/dc/mnmodeselect.c	DERIVED	ported decomp functions/data (mnmodeselect)
+src/dc/mnmodeselect.h	DERIVED	ported decomp declarations (mnmodeselect)
+src/dc/mnnocontroller.c	DERIVED	ported decomp functions/data (mnnocontroller)
+src/dc/mnnocontroller.h	DERIVED	ported decomp declarations (mnnocontroller)
+src/dc/mnoption.c	DERIVED	ported decomp functions/data (mnoption)
+src/dc/mnoption.h	DERIVED	ported decomp declarations (mnoption)
+src/dc/mnplayers1pbonus.c	DERIVED	ported decomp functions/data (mnplayers1pbonus)
+src/dc/mnplayers1pbonus.h	DERIVED	ported decomp declarations (mnplayers1pbonus)
+src/dc/mnplayers1pgame.c	DERIVED	ported decomp functions/data (mnplayers1pgame)
+src/dc/mnplayers1pgame.h	DERIVED	ported decomp declarations (mnplayers1pgame)
+src/dc/mnplayers1ptraining.c	DERIVED	ported decomp functions/data (mnplayers1ptraining)
+src/dc/mnplayers1ptraining.h	DERIVED	ported decomp declarations (mnplayers1ptraining)
+src/dc/mnplayersvs.c	DERIVED	ported decomp functions/data (mnplayersvs)
+src/dc/mnplayersvs.h	DERIVED	ported decomp declarations (mnplayersvs)
+src/dc/mnscreenadjust.c	DERIVED	ported decomp functions/data (mnscreenadjust)
+src/dc/mnscreenadjust.h	DERIVED	ported decomp declarations (mnscreenadjust)
+src/dc/mnsoundtest.c	DERIVED	ported decomp functions/data (mnsoundtest)
+src/dc/mnsoundtest.h	DERIVED	ported decomp declarations (mnsoundtest)
+src/dc/mnstartup.c	DERIVED	ported decomp functions/data (mnstartup)
+src/dc/mnstartup.h	DERIVED	ported decomp declarations (mnstartup)
+src/dc/mntitle.c	DERIVED	ported decomp functions/data (mntitle)
+src/dc/mntitle.h	DERIVED	ported decomp declarations (mntitle)
+src/dc/mnvsitemswitch.c	DERIVED	ported decomp functions/data (mnvsitemswitch)
+src/dc/mnvsitemswitch.h	DERIVED	ported decomp declarations (mnvsitemswitch)
+src/dc/mnvsmode.c	DERIVED	ported decomp functions/data (mnvsmode)
+src/dc/mnvsmode.h	DERIVED	ported decomp declarations (mnvsmode)
+src/dc/mnvsoptions.c	DERIVED	ported decomp functions/data (mnvsoptions)
+src/dc/mnvsoptions.h	DERIVED	ported decomp declarations (mnvsoptions)
+src/dc/mnvsrecord.c	DERIVED	ported decomp functions/data (mnvsrecord)
+src/dc/mnvsrecord.h	DERIVED	ported decomp declarations (mnvsrecord)
+src/dc/mpcommon.c	MIXED	mpCollisionLoadGeometry original; mpCommon* fighter collision functions ported
+src/dc/mpcommon.h	ORIGINAL	port entry point decl
+src/dc/mpshim.c	ORIGINAL	link stubs for compiled decomp mp files
+src/dc/mtx.h	ORIGINAL	4x4 float matrix ops
+src/dc/mvending.c	DERIVED	ported decomp functions/data (mvending)
+src/dc/mvending.h	DERIVED	ported decomp declarations (mvending)
+src/dc/mvopeningclash.c	DERIVED	ported decomp functions/data (mvopeningclash)
+src/dc/mvopeningclash.h	DERIVED	ported decomp declarations (mvopeningclash)
+src/dc/mvopeningcliff.c	DERIVED	ported decomp functions/data (mvopeningcliff)
+src/dc/mvopeningcliff.h	DERIVED	ported decomp declarations (mvopeningcliff)
+src/dc/mvopeningdonkey.c	DERIVED	ported decomp functions/data (mvopeningdonkey)
+src/dc/mvopeningdonkey.h	DERIVED	ported decomp declarations (mvopeningdonkey)
+src/dc/mvopeningfox.c	DERIVED	ported decomp functions/data (mvopeningfox)
+src/dc/mvopeningfox.h	DERIVED	ported decomp declarations (mvopeningfox)
+src/dc/mvopeningjungle.c	DERIVED	ported decomp functions/data (mvopeningjungle)
+src/dc/mvopeningjungle.h	DERIVED	ported decomp declarations (mvopeningjungle)
+src/dc/mvopeningkirby.c	DERIVED	ported decomp functions/data (mvopeningkirby)
+src/dc/mvopeningkirby.h	DERIVED	ported decomp declarations (mvopeningkirby)
+src/dc/mvopeninglink.c	DERIVED	ported decomp functions/data (mvopeninglink)
+src/dc/mvopeninglink.h	DERIVED	ported decomp declarations (mvopeninglink)
+src/dc/mvopeningmario.c	DERIVED	ported decomp functions/data (mvopeningmario)
+src/dc/mvopeningmario.h	DERIVED	ported decomp declarations (mvopeningmario)
+src/dc/mvopeningnewcomers.c	DERIVED	ported decomp functions/data (mvopeningnewcomers)
+src/dc/mvopeningnewcomers.h	DERIVED	ported decomp declarations (mvopeningnewcomers)
+src/dc/mvopeningpikachu.c	DERIVED	ported decomp functions/data (mvopeningpikachu)
+src/dc/mvopeningpikachu.h	DERIVED	ported decomp declarations (mvopeningpikachu)
+src/dc/mvopeningportraits.c	DERIVED	ported decomp functions/data (mvopeningportraits)
+src/dc/mvopeningportraits.h	DERIVED	ported decomp declarations (mvopeningportraits)
+src/dc/mvopeningroom.c	DERIVED	ported decomp functions/data (mvopeningroom)
+src/dc/mvopeningroom.h	DERIVED	ported decomp declarations (mvopeningroom)
+src/dc/mvopeningrun.c	DERIVED	ported decomp functions/data (mvopeningrun)
+src/dc/mvopeningrun.h	DERIVED	ported decomp declarations (mvopeningrun)
+src/dc/mvopeningsamus.c	DERIVED	ported decomp functions/data (mvopeningsamus)
+src/dc/mvopeningsamus.h	DERIVED	ported decomp declarations (mvopeningsamus)
+src/dc/mvopeningsector.c	DERIVED	ported decomp functions/data (mvopeningsector)
+src/dc/mvopeningsector.h	DERIVED	ported decomp declarations (mvopeningsector)
+src/dc/mvopeningstandoff.c	DERIVED	ported decomp functions/data (mvopeningstandoff)
+src/dc/mvopeningstandoff.h	DERIVED	ported decomp declarations (mvopeningstandoff)
+src/dc/mvopeningyamabuki.c	DERIVED	ported decomp functions/data (mvopeningyamabuki)
+src/dc/mvopeningyamabuki.h	DERIVED	ported decomp declarations (mvopeningyamabuki)
+src/dc/mvopeningyoshi.c	DERIVED	ported decomp functions/data (mvopeningyoshi)
+src/dc/mvopeningyoshi.h	DERIVED	ported decomp declarations (mvopeningyoshi)
+src/dc/mvopeningyoster.c	DERIVED	ported decomp functions/data (mvopeningyoster)
+src/dc/mvopeningyoster.h	DERIVED	ported decomp declarations (mvopeningyoster)
+src/dc/objanim.c	MIXED	endian wrappers; gcParseMObjMatAnimJoint etc. (objanim.c:1428-1471) verbatim
+src/dc/objdisplay.c	MIXED	PVR display path original; gc* matrix/display procs ported line for line from objdisplay.c
+src/dc/objmodel.c	ORIGINAL	baked-model PVR renderer
+src/dc/objmodel.h	ORIGINAL	model renderer API
+src/dc/objpvr.h	ORIGINAL	PVR display decls (gc* names, port bodies)
+src/dc/overlay.c	ORIGINAL	overlay reload emulation
+src/dc/overlay.h	DERIVED	overlay table decls / decomp d-table notes
+src/dc/perf.h	ORIGINAL	perf counters
+src/dc/primdump.c	ORIGINAL	PVR prim dumper
+src/dc/primdump.h	ORIGINAL	PVR prim dumper
+src/dc/sc1pbonusstage.c	DERIVED	ported decomp functions/data (sc1pbonusstage)
+src/dc/sc1pbonusstage.h	DERIVED	ported decomp declarations (sc1pbonusstage)
+src/dc/sc1pchallenger.c	DERIVED	ported decomp functions/data (sc1pchallenger)
+src/dc/sc1pchallenger.h	DERIVED	ported decomp declarations (sc1pchallenger)
+src/dc/sc1pgame.c	DERIVED	ported decomp functions/data (sc1pgame)
+src/dc/sc1pgame.h	DERIVED	ported decomp declarations (sc1pgame)
+src/dc/sc1pgameboss.c	DERIVED	ported decomp functions/data (sc1pgameboss)
+src/dc/sc1pgameboss.h	DERIVED	ported decomp declarations (sc1pgameboss)
+src/dc/sc1pintro.c	DERIVED	ported decomp functions/data (sc1pintro)
+src/dc/sc1pintro.h	DERIVED	ported decomp declarations (sc1pintro)
+src/dc/sc1pmanager.c	DERIVED	ported decomp functions/data (sc1pmanager)
+src/dc/sc1pmanager.h	DERIVED	ported decomp declarations (sc1pmanager)
+src/dc/sc1pstageclear.c	DERIVED	ported decomp functions/data (sc1pstageclear)
+src/dc/sc1pstageclear.h	DERIVED	ported decomp declarations (sc1pstageclear)
+src/dc/sc1ptrainingmode.c	DERIVED	ported decomp functions/data (sc1ptrainingmode)
+src/dc/sc1ptrainingmode.h	DERIVED	ported decomp declarations (sc1ptrainingmode)
+src/dc/scautodemo.c	DERIVED	ported decomp functions/data (scautodemo)
+src/dc/scautodemo.h	DERIVED	ported decomp declarations (scautodemo)
+src/dc/scexplain.c	DERIVED	ported decomp functions/data (scexplain)
+src/dc/scexplain.h	DERIVED	ported decomp declarations (scexplain)
+src/dc/scmanager.c	MIXED	scene loop/prefetch original; scManagerFuncUpdate/FuncDraw etc. verbatim
+src/dc/scmanager.h	ORIGINAL	port scene manager decls
+src/dc/scmanagerdata.c	DERIVED	sc/scmanager.c .data tables verbatim
+src/dc/scport.h	ORIGINAL	port scene kinds
+src/dc/scprefetch.h	ORIGINAL	read-ahead prefetch lists
+src/dc/scstaffroll.c	DERIVED	ported decomp functions/data (scstaffroll)
+src/dc/scstaffroll.h	DERIVED	ported decomp declarations (scstaffroll)
+src/dc/scsubsysdata.c	DERIVED	scsubsysdata.c tables verbatim
+src/dc/scsubsysfighter.c	DERIVED	ported decomp functions/data (scsubsysfighter)
+src/dc/scvsbattle.c	DERIVED	ported decomp functions/data (scvsbattle)
+src/dc/scvsbattle.h	DERIVED	ported decomp declarations (scvsbattle)
+src/dc/scvsresults.c	DERIVED	ported decomp functions/data (scvsresults)
+src/dc/scvsresults.h	DERIVED	ported decomp declarations (scvsresults)
+src/dc/seq/seqcore.c	ORIGINAL	the port's own sequencer; integer-only
+src/dc/seq/seqcore.h	ORIGINAL	the port's own sequencer API and state
+src/dc/seq/seqprep.c	ORIGINAL	float half of the sequencer: oscillator tables from the bank (sys/audio.c's expressions, cited)
+src/dc/seq/seqprep.h	ORIGINAL	oscillator table builder API
+src/dc/sndres.c	ORIGINAL	per-scene sound residency
+src/dc/sndres.h	ORIGINAL	sound residency
+src/dc/sprite.c	ORIGINAL	sprite bank loader
+src/dc/sprite.h	ORIGINAL	sprite bank API
+src/dc/stackguard.c	ORIGINAL	stack guard
+src/dc/stackguard.h	ORIGINAL	stack guard
+src/dc/stage.c	MIXED	stage loader/renderer original; grCommonSetupInitAll, grWallpaper* ported
+src/dc/stage.h	ORIGINAL	stage pack format/API
+src/dc/syaudio.c	MIXED	FGM player glue; syAudioPlayFGM/Sweep/Stop verbatim from sys/audio.c
+src/dc/syaudio.h	ORIGINAL	audio API decls
+src/dc/sysshim.c	MIXED	os* threads/mesgqueues over KOS original; syRdpSetViewport/SetDefaultViewport verbatim
+src/dc/taskman.c	MIXED	heap/hooks/frame loop original; several sys/taskman.c, sys/scheduler.c pieces verbatim
+src/dc/taskman.h	ORIGINAL	taskman port API
+src/dc/test/Makefile	ORIGINAL	build
+src/dc/test/input_hosttest.c	ORIGINAL	host test
+src/dc/test/mtx_hosttest.c	ORIGINAL	host test
+src/dc/textguard.c	ORIGINAL	text-segment guard
+src/dc/textguard.h	ORIGINAL	text-segment guard
+src/dc/vmucard.c	ORIGINAL	VMU card I/O
+src/dc/vmucard.h	ORIGINAL	VMU card I/O
+src/dc/vmunotice.c	ORIGINAL	VMU save notice
+src/dc/vmunotice.h	ORIGINAL	VMU save notice
+src/dc/vmusave.c	ORIGINAL	SRAM-over-VMU save writer (decomp signatures only)
+src/dc/vmusave.h	ORIGINAL	VMU save API
+src/dc/wpattrs.c	ORIGINAL	weapon attribute binder
+src/dc/wpattrs.h	ORIGINAL	weapon attribute binder
+src/dc/wpdisplay.c	DERIVED	ported decomp functions/data (wpdisplay)
+src/dc/wpmain.c	DERIVED	ported decomp functions/data (wpmain)
+src/dc/wpmanager.c	DERIVED	ported decomp functions/data (wpmanager)
+src/dc/wpmap.c	DERIVED	ported decomp functions/data (wpmap)
+src/dc/wpprocess.c	DERIVED	ported decomp functions/data (wpprocess)
+src/game/ssb64/Makefile	ORIGINAL	build
+src/game/ssb64/bakehost.c	ORIGINAL	host baker
+src/game/ssb64/hoststubs/bakepvr.c	ORIGINAL	host PVR stub; includes KOS pvr_prim.c extracted at build time (not in tree)
+src/game/ssb64/hoststubs/dc/pvr.h	ORIGINAL	host stub
+src/game/ssb64/hoststubs/hoststubs.h	ORIGINAL	host stub
+src/game/ssb64/hoststubs/kos.h	ORIGINAL	host stub
+src/game/ssb64/hosttest/combat.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/common.c	MIXED	test harness; verbatim ftphysics.c/ftcommonjump.c reference bodies and Mario ROM data
+src/game/ssb64/hosttest/computer.c	MIXED	tests; func_ovl3_80137E70 reference transcription
+src/game/ssb64/hosttest/effects.c	MIXED	tests; lbCommonMatrix* bodies copied verbatim as reference
+src/game/ssb64/hosttest/fighters.c	MIXED	tests; hand port of ftcommonspeciallw.c:48-58 cascade
+src/game/ssb64/hosttest/frontend.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/itemcore.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/items.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/match.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/memcard.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/openings.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/physics.c	MIXED	tests; verbatim transcriptions of ftPhysics* as reference
+src/game/ssb64/hosttest/presentation.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/roster.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/save.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/scripts.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/stages.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/text.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/hosttest/weapons.c	MIXED	tests; colour tables verbatim from decomp
+src/game/ssb64/hosttest_ft.c	ORIGINAL	host test driver #including hosttest/ parts
+src/game/ssb64/hosttest_gmcolscripts.c	ORIGINAL	host test code exercising decomp/port functions
+src/game/ssb64/main.c	ORIGINAL	Dreamcast entry point
+tools/check/lbparticle_check.py	MIXED	texrect_words (~417-443) re-expresses libultra gSPScisTextureRectangle's clamp and s,t walk
+tools/check/model_pack_check.py	MIXED	RefRun._mobj (~481-557) ported from sys/objdisplay.c gcDrawMObjForDObj
+tools/check/shade_check.py	MIXED	table_sin/table_cos/n64_light_bytes (~260-289) port lbCommonSin/Cos, ftDisplayLightsDrawReflect
+tools/export/ssb_stageexport.py	MIXED	STAGES (~108-1226): ROM/decomp scalars, item weights, fog; efground descs/params transcribed
+tools/lib/ssb_assets.py	MIXED	AnimJoint/MatAnim/Figatree players (~643-1330) port gcParse*; n64_texel from decomp relocSpriteTool
+tools/lib/ssb_extract.py	MIXED	decode_vpk0 + BitReader/Node (~47-155) ported from sys/dma.c syDmaDecodeVpk0
+tools/lib/ssb_vadpcm.py	DERIVED	adpcm_decode is the decomp's tools/audio_codec.py adpcm_decode, scale bound changed
+Platform/xbox/LICENSE.KOS	KOS	KallistiOS's license text, copied
+Platform/xbox/aica.h	KOS	KallistiOS's sound/arm/aica.h register macros over the emulated register file (LICENSE.KOS)
+Platform/xbox/aica/aica_bus_xbox.c	KOS	snd_mem allocator and queue copy after KallistiOS's snd_mem.c/snd_iface.c (LICENSE.KOS)
+Platform/xbox/aica/aica_decode.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/aica/aica_fw_seqsyn.c	ORIGINAL	Xbox port
+Platform/xbox/aica/aica_fw_xbox.c	KOS	channel routines ported from KallistiOS's sound/arm/aica.c (LICENSE.KOS); the port's firmware loop
+Platform/xbox/aica/aica_mixer_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/aica/aica_reverb_net.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/aica/aica_xbox.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/aica_cmd_iface.h	KOS	KallistiOS's sound/arm/aica_cmd_iface.h over the emulated register file (LICENSE.KOS)
+Platform/xbox/arch/arch.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/arch/irq.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/arch/rtc.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/arch/stack.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/arch/timer.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/arch/types.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/g2bus.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/maple.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/maple/controller.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/maple/purupuru.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/maple/vmu.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/pvr.h	KOS	KallistiOS's PVR API types, constants and header layouts (LICENSE.KOS)
+Platform/xbox/dc/sound/aica_comm.h	KOS	KallistiOS's dc/sound/aica_comm.h, copied, one include added (Platform/xbox/LICENSE.KOS)
+Platform/xbox/dc/sound/sound.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/spu.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/sq.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/video.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/vmu_pkg.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/dc/vmufs.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/cdefs.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/cond.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/dbgio.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/dbglog.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/fs.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/mm.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/mutex.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/sem.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos/thread.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/kos_fs_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/kos_log_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/kos_maple_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/kos_sys_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/kos_thread_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/kos_vmu_pkg.c	KOS	KallistiOS's util/vmu_pkg.c builder and parser (LICENSE.KOS)
+Platform/xbox/kos_vmu_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/overlay_bounds_xbox.c	ORIGINAL	Xbox port
+Platform/xbox/pvr_texdecode.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox
+Platform/xbox/pvr_xbox.c	KOS	pvr_poly_compile/cxt and the twiddle ported from KallistiOS's hardware/pvr (LICENSE.KOS); the D3D8 renderer
+Platform/xbox/saveimage.rdf	ORIGINAL	Xbox port
+Platform/xbox/titleimage.rdf	ORIGINAL	Xbox port
+Platform/xbox/xbox_main.c	ORIGINAL	Xbox port
+Platform/xbox/xbox_xtl.h	ORIGINAL	Xbox shim: KallistiOS's API by its names, implemented in Platform/xbox

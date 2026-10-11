@@ -1,0 +1,3 @@
+# Empty on purpose: what src/game/ssb64/Makefile includes from KallistiOS when
+# no SH-4 object is built (tools/xbox/hostenv.py). A comment, so it is never a
+# zero-byte file -- some upload paths drop those.

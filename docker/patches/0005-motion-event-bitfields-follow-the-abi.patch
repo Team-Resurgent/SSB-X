@@ -1,0 +1,454 @@
+diff --git a/src/ft/fttypes.h b/src/ft/fttypes.h
+index c59c9c3cb..61f4284e1 100644
+--- a/src/ft/fttypes.h
++++ b/src/ft/fttypes.h
+@@ -196,19 +196,49 @@ struct FTMotionScript
+ 
+ struct FTMotionEventDefault // Event with no arguments
+ {
++/*
++ * Every FTMotionEvent* word below decodes script data out of the
++ * fighters' motion files, so the bit-fields have to land on the same bits
++ * on either ABI. Within each 32-bit word the order is reversed where the
++ * compiler says it is building little-endian, as sys/objtypes.h does for
++ * the AObj event words, and a word the fields do not fill gets the
++ * padding the big-endian layout leaves below them declared first, so the
++ * fields keep their bit positions. IDO defines no __BYTE_ORDER__, so the
++ * N64 build sees the declarations it always did.
++ */
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++    u32 value : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+     u32 value : 26;
++#endif
+ };
+ 
+ struct FTMotionEventDouble // Event with no arguments
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 pad1 : 26;
++	u32 opcode : 6;
++	u32 pad2 : 32;
++#else
+ 	u32 opcode : 6;
+ 	u32 pad1 : 26;
+ 	u32 pad2 : 32;
++#endif
+ };
+ 
+ struct FTMotionEventMakeAttack1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 element : 4;
++	ub32 can_rebound : 1;
++	u32 damage : 8;
++	s32 joint_id : 7;
++	u32 group_id : 3;
++	u32 attack_id: 3;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 attack_id: 3;
+ 	u32 group_id : 3;
+@@ -216,34 +246,60 @@ struct FTMotionEventMakeAttack1
+ 	u32 damage : 8;
+ 	ub32 can_rebound : 1;
+ 	u32 element : 4;
++#endif
+ };
+ 
+ struct FTMotionEventMakeAttack2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 off_x : 16;
++	u32 size : 16;
++#else
+ 	u32 size : 16;
+ 	s32 off_x : 16;
++#endif
+ };
+ 
+ struct FTMotionEventMakeAttack3
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 off_z : 16;
++	s32 off_y : 16;
++#else
+ 	s32 off_y : 16;
+ 	s32 off_z : 16;
++#endif
+ };
+ 
+ struct FTMotionEventMakeAttack4
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 is_hit_ground_air : 2;  // This should really be two separate bits, but it doesn't match that way
++	u32 knockback_weight : 10;
++	u32 knockback_scale : 10;
++	s32 angle : 10;
++#else
+ 	s32 angle : 10;
+ 	u32 knockback_scale : 10;
+ 	u32 knockback_weight : 10;
+ 	u32 is_hit_ground_air : 2;  // This should really be two separate bits, but it doesn't match that way
++#endif
+ };
+ 
+ struct FTMotionEventMakeAttack5
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 7;
++	u32 knockback_base : 10;
++	u32 fgm_kind : 4;
++	u32 fgm_level : 3;
++	s32 shield_damage : 8;
++#else
+ 	s32 shield_damage : 8;
+ 	u32 fgm_level : 3;
+ 	u32 fgm_kind : 4;
+ 	u32 knockback_base : 10;
++#endif
+ };
+ 
+ struct FTMotionEventMakeAttack
+@@ -257,15 +313,27 @@ struct FTMotionEventMakeAttack
+ 
+ struct FTMotionEventSetAttackOffset1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 7;
++	s32 off_x : 16;
++	u32 attack_id: 3;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 attack_id: 3;
+ 	s32 off_x : 16;
++#endif
+ };
+ 
+ struct FTMotionEventSetAttackOffset2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 off_z : 16;
++	s32 off_y : 16;
++#else
+ 	s32 off_y : 16;
+ 	s32 off_z : 16;
++#endif
+ };
+ 
+ struct FTMotionEventSetAttackOffset
+@@ -276,28 +344,54 @@ struct FTMotionEventSetAttackOffset
+ 
+ struct FTMotionEventSetAttackCollDamage
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 15;
++	u32 damage : 8;
++	u32 attack_id: 3;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 attack_id: 3;
+ 	u32 damage : 8;
++#endif
+ };
+ 
+ struct FTMotionEventSetAttackCollSize
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 7;
++	u32 size : 16;
++	u32 attack_id: 3;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 attack_id: 3;
+ 	u32 size : 16;
++#endif
+ };
+ 
+ struct FTMotionEventSetAttackCollSound
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 20;
++	u32 fgm_level : 3;
++	u32 attack_id: 3;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 attack_id: 3;
+ 	u32 fgm_level : 3;
++#endif
+ };
+ 
+ struct FTMotionEventSetThrow1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
++#endif
+ };
+ 
+ struct FTMotionEventSetThrow2
+@@ -313,28 +407,50 @@ struct FTMotionEventSetThrow
+ 
+ struct FTMotionEventMakeEffect1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 flag : 10;
++	u32 effect_id : 9;
++	s32 joint_id : 7;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	s32 joint_id : 7;
+ 	u32 effect_id : 9;
+ 	u32 flag : 10;
++#endif
+ };
+ 
+ struct FTMotionEventMakeEffect2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 off_y : 16;
++	s32 off_x : 16;
++#else
+ 	s32 off_x : 16;
+ 	s32 off_y : 16;
++#endif
+ };
+ 
+ struct FTMotionEventMakeEffect3
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 rng_x : 16;
++	s32 off_z : 16;
++#else
+ 	s32 off_z : 16;
+ 	s32 rng_x : 16;
++#endif
+ };
+ 
+ struct FTMotionEventMakeEffect4
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 rng_z : 16;
++	s32 rng_y : 16;
++#else
+ 	s32 rng_y : 16;
+ 	s32 rng_z : 16;
++#endif
+ };
+ 
+ struct FTMotionEventMakeEffect
+@@ -347,33 +463,60 @@ struct FTMotionEventMakeEffect
+ 
+ struct FTMotionEventSetHitStatusPartID
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 hitstatus : 19;
++	s32 joint_id : 7;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	s32 joint_id : 7;
+ 	u32 hitstatus : 19;
++#endif
+ };
+ 
+ struct FTMotionEventSetDamageCollPartID1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 19;
++	s32 joint_id : 7;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	s32 joint_id : 7;
++#endif
+ };
+ 
+ struct FTMotionEventSetDamageCollPartID2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 off_y : 16;
++	s32 off_x : 16;
++#else
+ 	s32 off_x : 16;
+ 	s32 off_y : 16;
++#endif
+ };
+ 
+ struct FTMotionEventSetDamageCollPartID3
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 size_x : 16;
++	s32 off_z : 16;
++#else
+ 	s32 off_z : 16;
+ 	s32 size_x : 16;
++#endif
+ };
+ 
+ struct FTMotionEventSetDamageCollPartID4
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 size_z : 16;
++	s32 size_y : 16;
++#else
+ 	s32 size_y : 16;
+ 	s32 size_z : 16;
++#endif
+ };
+ 
+ struct FTMotionEventSetDamageCollPartID
+@@ -386,7 +529,12 @@ struct FTMotionEventSetDamageCollPartID
+ 
+ struct FTMotionEventSubroutine1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
++#endif
+ };
+ 
+ struct FTMotionEventSubroutine2
+@@ -402,7 +550,12 @@ struct FTMotionEventSubroutine
+ 
+ struct FTMotionEventSetDamageThrown1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
++#endif
+ };
+ 
+ struct FTMotionEventSetDamageThrown2
+@@ -423,7 +576,12 @@ struct FTMotionEventSetDamageThrown
+ 
+ struct FTMotionEventGoto1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
++#endif
+ };
+ 
+ struct FTMotionEventGoto2
+@@ -439,7 +597,12 @@ struct FTMotionEventGoto
+ 
+ struct FTMotionEventParallel1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
+ 	u32 opcode : 6;
++#else
++	u32 opcode : 6;
++#endif
+ };
+ 
+ struct FTMotionEventParallel2
+@@ -455,50 +618,91 @@ struct FTMotionEventParallel
+ 
+ struct FTMotionEventSetModelPartID
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 modelpart_id : 19;
++	s32 joint_id : 7;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	s32 joint_id : 7;
+ 	s32 modelpart_id : 19;
++#endif
+ };
+ 
+ struct FTMotionEventSetTexturePartID
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 frame : 20;
++	u32 texturepart_id : 6;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 texturepart_id : 6;
+ 	u32 frame : 20;
++#endif
+ };
+ 
+ struct FTMotionEventSetColAnimID
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 length : 18;
++	u32 colanim_id : 8;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 colanim_id : 8;
+ 	u32 length : 18;
++#endif
+ };
+ 
+ struct FTMotionEventSetSlopeContour
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 flags : 3;
++	u32 pad : 23;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 pad : 23;
+ 	u32 flags : 3;
++#endif
+ };
+ 
+ struct FTMotionEventSetAfterImage
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 drawstatus : 18;
++	u32 is_itemswing : 8;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 is_itemswing : 8;
+ 	s32 drawstatus : 18;
++#endif
+ };
+ 
+ struct FTMotionEventMakeRumble
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 rumble_id : 13;
++	u32 length : 13;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 length : 13;
+ 	u32 rumble_id : 13;
++#endif
+ };
+ 
+ struct FTMotionEventStopRumble
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 rumble_id : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 rumble_id : 26;
++#endif
+ };
+ 
+ struct FTStatusDesc

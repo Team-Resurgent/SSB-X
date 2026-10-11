@@ -1,0 +1,190 @@
+diff --git a/src/gm/gmtypes.h b/src/gm/gmtypes.h
+index 6d38162..4ba31f3 100644
+--- a/src/gm/gmtypes.h
++++ b/src/gm/gmtypes.h
+@@ -116,13 +116,35 @@ struct GMColDesc
+ 
+ struct GMColEventDefault
+ {
++/*
++ * Every GMColEvent* word below decodes a colour-animation script
++ * (gm/gmcolscripts.c, built by gm/gmdef.h's gmColCommand* macros with the
++ * opcode in the top six bits), so the bit-fields have to land on the same
++ * bits on either ABI. Within each 32-bit word the order is reversed where
++ * the compiler says it is building little-endian, as ft/fttypes.h does for
++ * the motion-event words and sys/objtypes.h for the AObj event words, and
++ * a word the fields do not fill gets the padding the big-endian layout
++ * leaves below them declared first, so the fields keep their bit
++ * positions. IDO defines no __BYTE_ORDER__, so the N64 build sees the
++ * declarations it always did.
++ */
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 value : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 value : 26;
++#endif
+ };
+ 
+ struct GMColEventGoto1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
+ 	u32 opcode : 6;
++#else
++	u32 opcode : 6;
++#endif
+ };
+ 
+ struct GMColEventGoto2
+@@ -138,7 +160,12 @@ struct GMColEventGoto
+ 
+ struct GMColEventSubroutine1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
++#endif
+ };
+ 
+ struct GMColEventSubroutine2
+@@ -154,7 +181,12 @@ struct GMColEventSubroutine
+ 
+ struct GMColEventParallel1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
++#endif
+ };
+ 
+ struct GMColEventParallel2
+@@ -170,15 +202,27 @@ struct GMColEventParallel
+ 
+ struct GMColEventSetRGBA1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 : 26;
+ 	u32 opcode : 6;
++#else
++	u32 opcode : 6;
++#endif
+ };
+ 
+ struct GMColEventSetRGBA2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 a : 8;
++	u32 b : 8;
++	u32 g : 8;
++	u32 r : 8;
++#else
+ 	u32 r : 8;
+ 	u32 g : 8;
+ 	u32 b : 8;
+ 	u32 a : 8;
++#endif
+ };
+ 
+ struct GMColEventSetRGBA
+@@ -189,16 +233,28 @@ struct GMColEventSetRGBA
+ 
+ struct GMColEventBlendRGBA1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 blend_frames : 26;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	u32 blend_frames : 26;
++#endif
+ };
+ 
+ struct GMColEventBlendRGBA2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 a : 8;
++	u32 b : 8;
++	u32 g : 8;
++	u32 r : 8;
++#else
+ 	u32 r : 8;
+ 	u32 g : 8;
+ 	u32 b : 8;
+ 	u32 a : 8;
++#endif
+ };
+ 
+ struct GMColEventBlendRGBA
+@@ -209,28 +265,50 @@ struct GMColEventBlendRGBA
+ 
+ struct GMColEventMakeEffect1
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	u32 flag : 10;
++	u32 effect_id : 9;
++	s32 joint_id : 7;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	s32 joint_id : 7;
+ 	u32 effect_id : 9;
+ 	u32 flag : 10;
++#endif
+ };
+ 
+ struct GMColEventMakeEffect2
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 off_y : 16;
++	s32 off_x : 16;
++#else
+ 	s32 off_x : 16;
+ 	s32 off_y : 16;
++#endif
+ };
+ 
+ struct GMColEventMakeEffect3
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 rng_x : 16;
++	s32 off_z : 16;
++#else
+ 	s32 off_z : 16;
+ 	s32 rng_x : 16;
++#endif
+ };
+ 
+ struct GMColEventMakeEffect4
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 rng_z : 16;
++	s32 rng_y : 16;
++#else
+ 	s32 rng_y : 16;
+ 	s32 rng_z : 16;
++#endif
+ };
+ 
+ struct GMColEventMakeEffect
+@@ -243,9 +321,15 @@ struct GMColEventMakeEffect
+ 
+ struct GMColEventSetLight
+ {
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++	s32 light2 : 13;
++	s32 light1 : 13;
++	u32 opcode : 6;
++#else
+ 	u32 opcode : 6;
+ 	s32 light1 : 13;
+ 	s32 light2 : 13;
++#endif
+ };
+ 
+ union GMColEventAll

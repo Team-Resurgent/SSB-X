@@ -1,0 +1,5 @@
+# Pinned to what the asset tools were developed against, so a rebuilt image
+# reproduces the same bytes. numpy is used by the BGM exporter; pygfxd is the
+# libgfxd binding the mesh/DL exporters replay display lists with.
+numpy==2.3.5
+pygfxd==1.0.5

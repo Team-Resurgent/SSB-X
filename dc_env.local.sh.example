@@ -1,0 +1,12 @@
+# ssb64-dc: per-machine settings. Copy to dc_env.local.sh (gitignored) and
+# edit. Read on the host only -- the build container sets its own paths.
+
+# Container runtime. Probed automatically (docker if its socket works, else
+# podman); set this to force one.
+#export CTR=podman
+
+# Use an image built somewhere else instead of the tag from docker/pins.env.
+#export SSB64_IMAGE=ghcr.io/<you>/ssb64-dc-dev:latest
+
+# Keep the baserom outside the repo; it gets mounted read-only at ./baserom.z64.
+#export SSB64_ROM="$HOME/roms/ssb64.z64"

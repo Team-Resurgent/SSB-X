@@ -1,0 +1,110 @@
+# Build outputs
+build/
+build-dc/
+*.o
+.cflags
+*.elf
+*.cdi
+*.img
+*.bin
+
+# Probe logs, frame dumps and one-off scripts: a working area, never shipped
+tools/scratch/
+
+# Host tools built from external/n64 (tools/build_gfxdis.sh)
+tools/bin/
+
+# KOS builds in place; keep its build junk out of status (submodules have
+# their own .gitignore, this is just a belt-and-suspenders guard)
+external/*/build/
+external/*/build-*/
+
+# KOS generated
+*.o.tmp
+
+# Local env overrides
+dc_env.local.sh
+
+# N64 baserom(s) — copyrighted, never commit
+*.z64
+
+# Generated romdisks (built by the game Makefile)
+src/game/*/romdisk/
+# ... and the assets built for the disc and kept out of the ELF's romdisk
+src/game/*/disc/
+
+# Generated particle-bank addresses (built by
+# tools/export/ssb_particleexport.py): the eighteen ROM ranges as absolute
+# linker symbols, one file for the sh-elf link and one for the host test's,
+# which spells them without the underscore prefix. Regenerated every build,
+# never edited.
+src/game/*/particlebanks.ld
+src/game/*/hosttest_particlebanks.ld
+# the fighters' weapon-table offsets, the same way
+# (tools/export/ssb_wpattrexport.py)
+src/game/*/wpattrs.ld
+src/game/*/hosttest_wpattrs.ld
+src/game/*/sintable.c
+# libultra's __sinf/__cosf (tools/export/ssb_trigexport.py)
+src/game/*/gusinf.c
+src/game/*/gucosf.c
+src/game/*/aica_reverb.h
+src/game/*/aica_sends.h
+
+# The item models' build stamp (src/game/ssb64/Makefile: one run of
+# tools/export/ssb_itemmodelexport.py makes all 32 packs, so the rule's target
+# is a stamp rather than 32 files it cannot track). Lives outside romdisk/ on
+# purpose -- tools/export/disc_layout.py refuses a staged file its manifest does
+# not name, and this is a build artifact, not a disc file.
+src/game/*/.itmodels.stamp
+# The save pictures' preview (tools/export/ssb_vmuart.py --preview): the
+# game's art, so never committed
+src/game/*/vmuart-preview.png
+
+# Generated credit text (src/game/ssb64/Makefile runs the decomp's own
+# tools/creditsTextConverter.py over ssb-decomp-re/src/credits/*.us.txt;
+# src/dc/scstaffroll.c #includes the .encoded/.metadata pair it writes).
+# Derived from the pinned decomp, regenerated every build, and removed
+# again by make clean -- a build artifact, not a source file.
+src/game/*/credits/
+
+# Generated reloc-data declarations (built by tools/export/gen_reloc_header.sh,
+# which runs the decomp's own tools/genRelocSymbols.py): one extern
+# declaration per ROM file and per block inside one, derived from the
+# pinned decomp. Regenerated every build, never edited.
+src/dc/decomp/reloc_data.us.h
+
+# Python
+__pycache__/
+*.pyc
+src/dc/test/input_hosttest
+src/game/ssb64/hosttest_ft
+src/game/ssb64/bake_host
+src/game/ssb64/hoststubs/kos_poly.inc
+src/dc/test/mtx_hosttest_scalar
+src/dc/test/mtx_hosttest_shz
+
+# Optional local checkouts of the pinned upstreams (the build reads the
+# image's copies; the tools fall back to ./ssb-decomp-re if one is here).
+/ssb-decomp-re/
+/external/
+# the AICA firmware link map (src/game/ssb64/Makefile)
+src/game/*/aica_fw.map
+
+# Editor and AI-assistant settings: local to each checkout, never shipped
+.vscode/
+.claude/
+
+
+# --- Xbox port -----------------------------------------------------------
+# the pinned decomp and its include mirror (python setup.py fetches/makes them)
+/extern/
+# staged game data: ROM-derived, never published
+/data/
+# build output (XBE, ISO, objects, PDB)
+/out/
+# generated: wrappers, absolute symbols, reverb table, icons (ROM-derived)
+/Platform/xbox/gen/
+# Visual Studio per-user state
+.vs/
+*.vcxproj.user

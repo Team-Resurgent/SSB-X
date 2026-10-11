@@ -1,0 +1,9 @@
+# One line ending on every machine. The build runs the Dreamcast port's
+# Makefile and shell shims under MSYS2 and applies docker/patches/ to an LF
+# checkout of the decomp (setup.py clones it with core.autocrlf=false), so a
+# CRLF checkout -- Git for Windows' default -- must not happen here.
+* text=auto eol=lf
+
+# Visual Studio's own files keep Windows endings
+*.sln     text eol=crlf
+*.vcxproj text eol=crlf

@@ -1,0 +1,14 @@
+diff --git a/src/sys/objanim.h b/src/sys/objanim.h
+index 4ba58a03b..a3aab1d96 100644
+--- a/src/sys/objanim.h
++++ b/src/sys/objanim.h
+@@ -45,6 +45,9 @@ extern f32 gcGetAObjRate(AObj *aobj);
+ // Apply AnimJoint values on current frame of animation to specific DObj
+ extern void gcPlayDObjAnimJoint(DObj *dobj);
+ 
++// Parse the MatAnimJoint script of a specific MObj up to the current frame
++extern void gcParseMObjMatAnimJoint(MObj *mobj);
++
+ // Apply MatAnimJoint values on current frame of animation to specific MObj
+ extern void gcPlayMObjMatAnim(MObj *mobj);
+ 

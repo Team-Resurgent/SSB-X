@@ -1,0 +1,49 @@
+Third-party projects
+
+None of these is committed here. The build image fetches each at the
+revision pinned in docker/pins.env, and each stays under its own license;
+see its repository.
+
+  ssb-decomp-re        https://github.com/VetriTheRetri/ssb-decomp-re
+                       The Super Smash Bros. decompilation. Declares no
+                       license. About 170 of its .c files are compiled
+                       unmodified, its headers are on the include path, and
+                       the asset tools read its sources. Much of src/ is
+                       ported from it (see LICENSE).
+  KallistiOS           https://github.com/KallistiOS/KallistiOS
+                       The Dreamcast OS and libraries. The host baker
+                       (src/game/ssb64/hoststubs/bakepvr.c) compiles a part
+                       of its pvr_prim.c, cut out at build time; the port's
+                       AICA firmware (src/dc/aica/) links
+                       its sound/arm/crt0.s and aica.c, compiled from the
+                       image's tree.
+                       The Xbox port's KallistiOS layer (Platform/xbox/)
+                       reimplements KOS's API over the Xbox with KOS's own
+                       names, types, constants and struct layouts, and
+                       carries code ported from KOS itself:
+                       dc/sound/aica_comm.h (copied), aica_cmd_iface.h and
+                       aica.h, the channel routines in aica/aica_fw_xbox.c
+                       (sound/arm/aica.c), kos_vmu_pkg.c
+                       (util/vmu_pkg.c), the sound-RAM allocator and queue
+                       in aica/aica_bus_xbox.c (sound/snd_mem.c,
+                       snd_iface.c), and pvr_poly_compile and the twiddle
+                       in pvr_xbox.c (hardware/pvr/). These stay under the
+                       KOS License (BSD), whose text is
+                       Platform/xbox/LICENSE.KOS.
+  glankk/n64           https://github.com/glankk/n64
+                       gfxdis, the reference display-list disassembler used
+                       by tools/check/verify_dl.py.
+  sh4zam               https://github.com/gyrovorbis/sh4zam
+                       SH-4 math routines.
+  img4dc               https://github.com/Kazade/img4dc
+                       The .cdi disc-image builder.
+  dreamcast-toolchain  docker.io/pcercuei/dreamcast-toolchain
+                       The prebuilt SH-4 cross-compiler image.
+
+Silicon Graphics: the files marked SGI in PROVENANCE.tsv are
+derived from libultra, which the decompilation carries; this project grants
+no license for them (see LICENSE). libultra's own sources are compiled from
+the decompilation at build time, never copied here.
+
+Super Smash Bros. is a trademark of Nintendo. Dreamcast is a trademark of
+Sega. This project is not affiliated with or endorsed by either.

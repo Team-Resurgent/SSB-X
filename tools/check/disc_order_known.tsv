@@ -1,0 +1,26 @@
+# disc_order_check.py --check: how many backward opens each scene window
+# may make, recorded from a -DDB_IO_TRACE run of the disc build. A window
+# that reaches back further than this is a load that started stepping:
+# fix the order in tools/export/disc_layout.py MANIFEST, or raise the number here
+# with the reason. Every one below is a reach the order cannot remove.
+#
+# bgm_bank_load reads bgm.pak at boot, before sndres reads the tables.
+# The pair is ordered for the SCENE CHANGE instead (fgm_sounds.pak then
+# bgm.pak), which happens once per scene; this happens once per run.
+audio	1
+# mncommon.spr belongs to the menus, which read it first; the character
+# select reads it again rather than carry a second copy of 353 KB.
+playersvs	1
+# The stage select loads a preview on every cursor move, so which stages
+# a run reads, and in what order, is the player's. The disc is in the
+# icon grid's order (mnMapsGetGroundKind); a player walking it backwards
+# walks the disc backwards, and eight is the whole grid.
+maps	8
+# Four reaches the battle cannot know in advance and one it repeats:
+# the chosen stage's .stg and its gr* particle bank, the four players'
+# stock icons out of the select, and efcommon.* which the select read
+# first. Seven measured with a four-fighter roster.
+vsbattle load	7
+title	0
+modeselect	0
+vsmode	0

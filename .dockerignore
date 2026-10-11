@@ -1,0 +1,12 @@
+# The image bakes in docker/ (the recipe, the pins and the decomp patches)
+# plus two files from the rest of the repo: the build environment and the
+# gfxdis build script. Everything upstream comes from docker/pins.env, and
+# the baserom (copyrighted) must never enter a layer.
+*
+!docker
+!scripts
+!tools
+scripts/*
+!scripts/dc_env.sh
+tools/*
+!tools/build_gfxdis.sh

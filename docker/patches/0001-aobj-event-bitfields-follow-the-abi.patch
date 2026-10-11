@@ -1,0 +1,46 @@
+diff --git a/src/sys/objtypes.h b/src/sys/objtypes.h
+index e695450ba..2b2250b42 100644
+--- a/src/sys/objtypes.h
++++ b/src/sys/objtypes.h
+@@ -83,9 +83,24 @@ union AObjEvent16
+ 
+     struct
+     {
++/*
++ * A bit-field's members are laid out from the most significant end of their
++ * container on a big-endian ABI and from the least significant end on a
++ * little-endian one. The word these fields decode is script data, so the
++ * split has to land on the same bits either way; the order below is reversed
++ * where the compiler says it is building little-endian. IDO defines no
++ * __BYTE_ORDER__, so the N64 build still sees exactly the declaration it
++ * always did.
++ */
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++        u16 toggle : 1;
++        u16 flags : 10;
++        u16 opcode : 5;
++#else
+         u16 opcode : 5;
+         u16 flags : 10;
+         u16 toggle : 1;
++#endif
+ 
+     } command;
+ };
+@@ -100,9 +115,16 @@ union AObjEvent32
+ 
+     struct
+     {
++/* Reversed on a little-endian ABI; see AObjEvent16 above. */
++#if defined(__BYTE_ORDER__) && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
++        u32 payload : 15;
++        u32 flags : 10;
++        u32 opcode : 7;
++#else
+         u32 opcode : 7;
+         u32 flags : 10;
+         u32 payload : 15;
++#endif
+         
+     } command;
+ };

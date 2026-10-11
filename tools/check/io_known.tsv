@@ -1,0 +1,9 @@
+# tools/check/io_check.py's allowed exceptions: a file call outside
+# src/dc/assetroot.c, or a memory-card call outside src/dc/vmucard.c, and
+# why it is safe.
+# file<TAB>function<TAB>why -- an entry that matches nothing fails the run.
+src/dc/disctrace.c	dt_fs_open	-DDB_DISC_TRACE's recorder (src/dc/disctrace.h): assetroot.c's fs_* calls are macros for these, so each runs under the lock the caller took
+src/dc/disctrace.c	dt_fs_read	-DDB_DISC_TRACE's recorder (src/dc/disctrace.h): assetroot.c's fs_* calls are macros for these, so each runs under the lock the caller took
+src/dc/disctrace.c	dt_fs_seek	-DDB_DISC_TRACE's recorder (src/dc/disctrace.h): assetroot.c's fs_* calls are macros for these, so each runs under the lock the caller took
+src/dc/disctrace.c	dt_fs_close	-DDB_DISC_TRACE's recorder (src/dc/disctrace.h): assetroot.c's fs_* calls are macros for these, so each runs under the lock the caller took
+src/game/ssb64/bakehost.c	main	the host baker is a host program that writes its stream to a file; it is not in the console build
