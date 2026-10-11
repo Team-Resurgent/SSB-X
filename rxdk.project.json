@@ -1,5 +1,5 @@
 {
-  "name": "ssb64x",
+  "name": "SSB-X",
   "type": "executable",
   "defaultConfiguration": "Release",
   "configurations": {
@@ -446,7 +446,7 @@
         "debug": true,
         "noLogo": true,
         "noLibWarn": true,
-        "testId": "0xffff0403",
+        "testId": "0x54520011",
         "testName": "Super Smash Bros.",
         "testVersion": "1",
         "titleImage": "Platform/xbox/gen/titleimage.xbx",
@@ -897,7 +897,7 @@
         "debug": false,
         "noLogo": true,
         "noLibWarn": true,
-        "testId": "0xffff0403",
+        "testId": "0x54520011",
         "testName": "Super Smash Bros.",
         "testVersion": "1",
         "titleImage": "Platform/xbox/gen/titleimage.xbx",

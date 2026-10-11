@@ -3,7 +3,7 @@
   Visual Studio 2022+ project for the Xbox build. A thin Makefile/NMake wrapper: it drives the
   RXDK CLI (Rxdk.Cli.exe), which reads rxdk.project.json, compiles, links, bundles the dashboard
   icons and packs the XISO. The CLI is the single source of truth, so setup.py, Rxdk.Cli build
-  and Build here all produce the same out\<Config>\XISO\ssb64x.iso.
+  and Build here all produce the same out\<Config>\XISO\SSB-X.iso.
 
   First run setup.py once with its skip-build flag: it fetches the decomp, exports the assets
   from your ROM, stages data\ and writes rxdk.project.json. Then open ssb64x.sln, pick the Xbox
@@ -51,7 +51,7 @@
     <NMakeBuildCommandLine>"$(RxdkCli)" build --project-root "$(MSBuildProjectDirectory)" --configuration $(Configuration)</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>cmd /c (if exist "$(OutRoot)" rmdir /s /q "$(OutRoot)") &amp; "$(RxdkCli)" build --project-root "$(MSBuildProjectDirectory)" --configuration $(Configuration)</NMakeReBuildCommandLine>
     <NMakeCleanCommandLine>cmd /c if exist "$(OutRoot)" rmdir /s /q "$(OutRoot)"</NMakeCleanCommandLine>
-    <NMakeOutput>$(OutRoot)\XISO\ssb64x.iso</NMakeOutput>
+    <NMakeOutput>$(OutRoot)\XISO\SSB-X.iso</NMakeOutput>
     <!-- IntelliSense: mirrors rxdk.project.json's include paths and defines. -->
     <NMakeIncludeSearchPath>$(MSBuildProjectDirectory)\Platform\xbox;$(MSBuildProjectDirectory)\src\dc;$(MSBuildProjectDirectory)\src\dc\decomp;$(MSBuildProjectDirectory)\extern\ssb-decomp-re\src;$(MSBuildProjectDirectory)\src\game\ssb64;$(MSBuildProjectDirectory)\extern\decomp_include;$(ProgramData)\RXDK\sdk\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakePreprocessorDefinitions>_XBOX;XBOX;_arch_dreamcast;_arch_sub_pristine;TARGET_XBOX=1;_LANGUAGE_C;F3DEX_GBI_2;REGION_US;AVOID_UB;MTX_BACKEND=MTX_BACKEND_SCALAR;SSB_RELEASE=1;DB_ENABLE=0;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>

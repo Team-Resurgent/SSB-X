@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """One command from a ROM to an Xbox disc image.
 
-    python setup.py                 # everything -> out/Release/XISO/ssb64x.iso
+    python setup.py                 # everything -> out/Release/XISO/SSB-X.iso
     python setup.py --check         # say what is there and what is missing
     python setup.py --skip-build    # stop before compiling (to build in Visual Studio)
     python setup.py --config Debug  # the debug configuration
@@ -41,6 +41,7 @@ import hostenv  # noqa: E402
 
 ROM = os.path.join(ROOT, "baserom.z64")
 ROM_SHA1 = "e2929e10fccc0aa84e5776227e798abc07cedabf"
+ISO_NAME = "SSB-X.iso"          # rxdk.project.json "name" + .iso (tools/xbox/gen_manifest.py)
 DECOMP = hostenv.DECOMP_DIR
 GAME = hostenv.GAME_DIR
 
@@ -80,7 +81,10 @@ def find_rxdk_cli():
 
 def rom_ok():
     if not os.path.isfile(ROM):
-        return False, "baserom.z64 is missing (your US ROM, big-endian .z64)"
+        return False, ("baserom.z64 not found. Copy your US Super Smash Bros. ROM into\n"
+                       "    %s\n"
+                       "  and name it exactly  baserom.z64  (big-endian .z64, SHA-1 %s)"
+                       % (ROOT, ROM_SHA1))
     with open(ROM, "rb") as f:
         data = f.read()
     sha = hashlib.sha1(data).hexdigest()
@@ -135,7 +139,7 @@ def check():
     say("exports: %d romdisk files, bundle %s" % (
         n, "present" if os.path.isfile(os.path.join(GAME, "disc", "models.bnd")) else "missing"))
     say("data/: %s" % ("staged" if os.path.isfile(os.path.join(ROOT, "data", "models.bnd")) else "not staged"))
-    iso = os.path.join(ROOT, "out", "Release", "XISO", "ssb64x.iso")
+    iso = os.path.join(ROOT, "out", "Release", "XISO", ISO_NAME)
     say("ISO: %s" % (iso if os.path.isfile(iso) else "not built"))
     return ok
 
@@ -200,7 +204,7 @@ def step_build(config):
             "Prerequisites) or set RXDK_CLI")
     say("building %s with %s" % (config, cli))
     run([cli, "build", "--project-root", ROOT, "--configuration", config])
-    iso = os.path.join(ROOT, "out", config, "XISO", "ssb64x.iso")
+    iso = os.path.join(ROOT, "out", config, "XISO", ISO_NAME)
     if os.path.isfile(iso):
         say("done: %s (%.1f MB)" % (iso, os.path.getsize(iso) / 1048576.0))
     else:
@@ -208,7 +212,7 @@ def step_build(config):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="ROM -> Xbox disc image for SSB64X")
+    ap = argparse.ArgumentParser(description="ROM -> Xbox disc image for SSB-X")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--skip-build", action="store_true")
     ap.add_argument("--config", default="Release", choices=["Release", "Debug"])

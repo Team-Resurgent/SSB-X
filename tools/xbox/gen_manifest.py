@@ -49,7 +49,7 @@ DROP = {
 # up the console and calls the game's under this name.
 RENAME_MAIN = {"main.o": "ssb_main"}
 
-PROJECT_NAME = "ssb64x"
+PROJECT_NAME = "SSB-X"           # the ISO is out/<Config>/XISO/SSB-X.iso
 
 COMMON_DEFINES = [
     "_arch_dreamcast",          # the KOS arch macro: Platform/xbox shims KOS
@@ -285,7 +285,7 @@ def main():
                 "debug": debug,
                 "noLogo": True,
                 "noLibWarn": True,
-                "testId": "0xffff0403",
+                "testId": "0x54520011",     # Team Resurgent TitleID-DB: SSB-X
                 "testName": "Super Smash Bros.",
                 "testVersion": "1",
                 "titleImage": "Platform/xbox/gen/titleimage.xbx",

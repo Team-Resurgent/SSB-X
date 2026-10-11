@@ -28,12 +28,32 @@ its credits and the description of what it changed from the N64 game apply here 
 
 ## Building
 
+**1. Put your ROM in the root of this folder, named `baserom.z64`.**
+
+Copy your US *Super Smash Bros.* ROM into the top folder of this repository
+-- the one with `setup.py` and this README in it -- and rename it to exactly
+`baserom.z64`:
+
+```
+SSB-X\
+  baserom.z64      <-- your ROM, this exact name
+  setup.py
+  README.md
+  ...
+```
+
+It must be the US v1.0 ROM in big-endian `.z64` format (SHA-1
+`e2929e10fccc0aa84e5776227e798abc07cedabf`). A `.n64` or `.v64` dump is
+byte-swapped: convert it to `.z64` first. `setup.py` checks the file and says
+what is wrong if it is missing, misnamed or a different version.
+
+**2. Run the build script from the same folder:**
+
 ```bash
-copy <your rom>.z64 baserom.z64
 python setup.py
 ```
 
-The result is `out/Release/XISO/ssb64x.iso`. `setup.py` runs, in order:
+The result is **`out/Release/XISO/SSB-X.iso`**. `setup.py` runs, in order:
 
 1. fetches [ssb-decomp-re](https://github.com/VetriTheRetri/ssb-decomp-re) at
    the revision `docker/pins.env` names into `extern/`, and applies
@@ -59,9 +79,9 @@ build, so both give the same ISO. **F5** is the Xbox Debugger (RXDK).
 
 ## Running
 
-Boot `out/Release/XISO/ssb64x.iso` on a modded console, or copy
-`out/Release/` (the `default.xbe` and its `data` folder) to the hard disk.
-`D:` is the XBE's own folder, so both work. To a devkit:
+Boot `out/Release/XISO/SSB-X.iso` on a modded console, or copy the folder
+`out/Release/Build/SSB-X/` (the `default.xbe` and its `data` folder) to the
+hard disk. `D:` is the XBE's own folder, so both work. To a devkit:
 
 ```bash
 C:\ProgramData\RXDK\tools\Rxdk.Cli.exe deploy --project-root . --console <ip>
@@ -69,7 +89,8 @@ C:\ProgramData\RXDK\tools\Rxdk.Cli.exe run --project-root . --console <ip>
 ```
 
 The game saves to the Xbox hard disk as a normal save game (dashboard >
-Memory > Super Smash Bros.).
+Memory > Super Smash Bros.). Its title ID is `54520011` (Team Resurgent's
+TitleID-DB).
 
 ### Video modes
 
