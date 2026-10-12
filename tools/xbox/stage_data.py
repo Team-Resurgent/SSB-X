@@ -18,7 +18,7 @@ import os
 import shutil
 import subprocess
 import sys
-import time
+import hashlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GAME = os.path.join(ROOT, "src", "game", "ssb64")
@@ -72,9 +72,24 @@ def main():
         if os.path.isfile(p):
             os.remove(p)
             dropped += 1
-    stamp = "ssb64x %s" % time.strftime("%Y-%m-%dT%H:%MZ", time.gmtime())
-    with open(os.path.join(OUT, "disc.id"), "w", encoding="ascii", newline="\n") as f:
+    # The stamp names the data, not the moment: a digest of what was staged,
+    # with the newest staged file's time. Re-staging the same exports then
+    # leaves data/ exactly as it was -- copy2 keeps every file's time -- so a
+    # Visual Studio build does not repack or redeploy an unchanged disc.
+    h = hashlib.sha1()
+    newest = 0.0
+    for name in sorted(os.listdir(OUT)):
+        p = os.path.join(OUT, name)
+        st = os.stat(p)
+        newest = max(newest, st.st_mtime)
+        h.update(name.encode() + b"\0" + str(st.st_size).encode() + b"\0")
+        with open(p, "rb") as f:
+            h.update(hashlib.sha1(f.read()).digest())
+    stamp = "SSB-X %s" % h.hexdigest()[:16]
+    idp = os.path.join(OUT, "disc.id")
+    with open(idp, "w", encoding="ascii", newline="\n") as f:
         f.write(stamp + "\n")
+    os.utime(idp, (newest, newest))
     files = os.listdir(OUT)
     size = sum(os.path.getsize(os.path.join(OUT, f)) for f in files)
     print("stage_data: %d files, %.1f MB in data/ (%d carried by models.bnd)"

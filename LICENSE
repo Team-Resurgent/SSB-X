@@ -26,7 +26,7 @@ port's original work:
 
   * the files under Platform/xbox/ marked ORIGINAL in PROVENANCE.tsv, and
     the port's own code inside the files marked KOS there;
-  * tools/xbox/, setup.py, rxdk.project.json, ssb64x.sln, ssb64x.vcxproj
+  * tools/xbox/, setup.py, build.bat, rxdk.project.json, SSB-X.sln, SSB-X.vcxproj(.filters)
     and .gitattributes;
   * the Xbox port's changes marked XBOX: in the files under src/ and tools/.
 

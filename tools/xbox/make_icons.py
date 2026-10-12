@@ -49,9 +49,16 @@ def write_bmp(path, img):
         data += line
     hdr = struct.pack("<2sIHHI", b"BM", 54 + len(data), 0, 0, 54)
     dib = struct.pack("<IiiHHIIiiII", 40, img.w, img.h, 1, 24, 0, len(data), 2835, 2835, 0, 0)
+    blob = hdr + dib + data
+    # unchanged pictures keep their timestamps, so a Visual Studio build
+    # does not re-bundle them every time
+    if os.path.isfile(path):
+        with open(path, "rb") as f:
+            if f.read() == blob:
+                return
     tmp = path + ".tmp"
     with open(tmp, "wb") as f:
-        f.write(hdr + dib + data)
+        f.write(blob)
     os.replace(tmp, path)
 
 

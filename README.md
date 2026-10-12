@@ -17,14 +17,29 @@ its credits and the description of what it changed from the N64 game apply here 
 
 ## Requirements
 
-* the [RXDK](https://github.com/Team-Resurgent) toolchain (RXDK > RXDK Window >
-  Install Prerequisites puts it in `C:\ProgramData\RXDK`)
-* Python 3 (numpy and pygfxd are installed by `setup.py` on first run)
-* git
-* [MSYS2](https://www.msys2.org/) with GNU make (`pacman -S make`). The asset
-  exporters are driven by the Dreamcast port's own Makefile, unchanged, which
-  needs a POSIX shell and make 4.
-* optional: Visual Studio 2022 or later, to build and debug in the IDE
+Windows 10 or 11, an internet connection for the first build, about 3 GB of
+free disk space, and your ROM. **You do not need to install anything else
+first:** the build script checks for every tool below and offers to install
+whatever is missing.
+
+| Needed | What for | Installed by the build script with |
+| --- | --- | --- |
+| 64-bit Python 3.11-3.14 | runs the build and the asset exporters | `build.bat` (winget) |
+| numpy, pygfxd | the exporters' maths and display-list replay | pip (prebuilt, nothing compiles) |
+| git | fetches the decompilation the exporters read | winget |
+| MSYS2 + GNU make | the shell the Dreamcast port's Makefile runs in | winget, then pacman |
+| .NET 8 runtime | RXDK's tools are .NET 8 programs | winget |
+| RXDK (host tools, SDK, LLVM) | compiles and packs the Xbox build | RXDK's own installer, into `C:\ProgramData\RXDK` |
+
+**Not needed:** MinGW or any other C compiler, Visual Studio, Docker,
+KallistiOS or a Dreamcast toolchain. (Visual Studio 2022 or later is optional,
+to build and debug in the IDE.)
+
+Nothing is installed without asking. To see the list without building:
+
+```bash
+python tools/xbox/prereqs.py
+```
 
 ## Building
 
@@ -37,6 +52,7 @@ Copy your US *Super Smash Bros.* ROM into the top folder of this repository
 ```
 SSB-X\
   baserom.z64      <-- your ROM, this exact name
+  build.bat
   setup.py
   README.md
   ...
@@ -44,16 +60,22 @@ SSB-X\
 
 It must be the US v1.0 ROM in big-endian `.z64` format (SHA-1
 `e2929e10fccc0aa84e5776227e798abc07cedabf`). A `.n64` or `.v64` dump is
-byte-swapped: convert it to `.z64` first. `setup.py` checks the file and says
+byte-swapped: convert it to `.z64` first. The build checks the file and says
 what is wrong if it is missing, misnamed or a different version.
 
-**2. Run the build script from the same folder:**
+**2. Double-click `build.bat`** (or run it in a console).
 
-```bash
-python setup.py
-```
+It finds Python -- offering to install it if there is none -- then checks
+everything else in the table above, lists anything missing and asks before
+installing it, and then builds. The first build takes a while (it downloads
+the decompilation and exports every asset); later ones are quicker.
 
-The result is **`out/Release/XISO/SSB-X.iso`**. `setup.py` runs, in order:
+The result is **`out/Release/XISO/SSB-X.iso`**.
+
+If you already have Python, `python setup.py` does the same as `build.bat`.
+Add `--yes` to either to install missing tools without being asked.
+
+The build runs, in order:
 
 1. fetches [ssb-decomp-re](https://github.com/VetriTheRetri/ssb-decomp-re) at
    the revision `docker/pins.env` names into `extern/`, and applies
@@ -69,13 +91,51 @@ The result is **`out/Release/XISO/SSB-X.iso`**. `setup.py` runs, in order:
 python setup.py --check         # what is present and what is missing
 python setup.py --skip-build    # everything but the compile, e.g. to build in Visual Studio
 python setup.py --config Debug  # the debug configuration (debug SDK libraries, -O0)
+python setup.py --yes           # install missing tools without asking
 ```
+
+### If the build fails
+
+* Run `python tools/xbox/prereqs.py` (or `build.bat --check`): every line
+  should say `[ok]`. Each `[!!]` line says what is missing and how to get it.
+* **winget not found** -- the build cannot install git, MSYS2 or .NET for you;
+  install them from the links the check prints, or install "App Installer"
+  from the Microsoft Store to get winget.
+* **just installed something and it is still "missing"** -- close the console
+  and run `build.bat` again, so Windows' new PATH is picked up.
+* **MSYS2 somewhere other than `C:\msys64`** -- set `MSYS2_ROOT` to its folder.
+* **a corporate proxy or firewall** -- the first build downloads from github.com,
+  pypi.org and repo.msys2.org.
 
 ### In Visual Studio
 
-Run `python setup.py --skip-build` once, open `ssb64x.sln`, choose the **Xbox**
-platform and Build. The project is a thin wrapper around the same `Rxdk.Cli`
-build, so both give the same ISO. **F5** is the Xbox Debugger (RXDK).
+`SSB-X.sln` is a native RXDK project, the same kind as the RXDK samples:
+Build, Rebuild, property pages and **F5 (Xbox Debugger (RXDK))** all work the
+usual way.
+
+**One-time Visual Studio setup:** in the Visual Studio Installer, choose
+*Modify > Individual components* and tick **MSBuild support for LLVM (clang-cl)
+toolset**. RXDK's build rules need a file it installs; without it Visual Studio
+cannot load any RXDK project (error MSB4019 `Microsoft.Cpp.ClangCl.Exclusion.props`
+not found). `python tools/xbox/prereqs.py` checks for it.
+
+Then put `baserom.z64` in the folder, open `SSB-X.sln`, pick **Debug** or
+**Release** on the **Xbox** platform, and Build. A fresh clone builds straight
+from here: the project's Pre-Build Event runs `build.bat --skip-build`, which
+fetches the decomp, exports the assets from your ROM and writes the generated
+sources and `data\` the project compiles and packs. The first build is the long
+one; after that the pre-build step re-checks the assets (about a minute) and
+RXDK compiles only what changed. The ISO is `Xbox\<Config>\SSB-X.iso`.
+
+* Visual Studio builds do not install anything. If a prerequisite is missing
+  the build stops and lists it: double-click `build.bat` once to install it,
+  then build again.
+* The project is generated from `rxdk.project.json` by
+  `tools/xbox/gen_vcxproj.py`. After adding or removing a source file, close
+  Visual Studio and run `build.bat` (or `python tools/xbox/gen_vcxproj.py`);
+  the build says when this is due. Change build settings in
+  `tools/xbox/gen_manifest.py`, not in the property pages, or the next
+  regeneration will undo them.
 
 ## Running
 
@@ -154,11 +214,12 @@ Build-system glue lives in `tools/xbox/`.
 ## Layout
 
 ```
-setup.py              the one-command build
+build.bat             double-click build: finds/installs Python, then runs setup.py
+setup.py              the one-command build (checks and installs prerequisites first)
 rxdk.project.json     the build manifest (generated by tools/xbox/gen_manifest.py)
-ssb64x.sln/.vcxproj   Visual Studio
+SSB-X.sln/.vcxproj    Visual Studio: a native RXDK project (tools/xbox/gen_vcxproj.py)
 Platform/xbox/        the Xbox platform layer (KallistiOS on the Xbox)
-tools/xbox/           host-side build glue (manifest, data, icons, reverb, checks)
+tools/xbox/           host-side build glue (prerequisites, manifest, data, icons, reverb, checks)
 src/dc/               the Dreamcast port (game code and its KOS-facing layer)
 src/game/ssb64/       its main.c and Makefile (asset rules and object list)
 tools/export, lib     its asset exporters

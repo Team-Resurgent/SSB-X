@@ -1,0 +1,1712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{af3f6471-f31a-5532-aae0-8ba03886367b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox">
+      <UniqueIdentifier>{265af7c9-f492-53fc-a752-d05dcdbb0772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\aica">
+      <UniqueIdentifier>{eea0ff8c-185d-51ca-95ac-a876c2555786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\arch">
+      <UniqueIdentifier>{d124f7d5-78d5-5495-b451-d4d29a4bd389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\dc">
+      <UniqueIdentifier>{43fb7c91-efee-5b4a-a3f1-6dee7b8e9519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\dc\maple">
+      <UniqueIdentifier>{ac88c8ce-e0aa-53f3-a01b-dfb508b97977}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\dc\sound">
+      <UniqueIdentifier>{4a497193-07b4-5c4a-8e88-e31aa920d2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\gen">
+      <UniqueIdentifier>{99e8e48d-1506-5d48-9b40-cdebb875f2b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\gen\tu">
+      <UniqueIdentifier>{00ad9de9-c4e8-5491-8fe4-3f739e4477d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\xbox\kos">
+      <UniqueIdentifier>{61ce6773-9ea0-5dcd-889e-7c9fd44395b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern">
+      <UniqueIdentifier>{ed2e2c2f-5ee5-566f-a307-44c5dfe04d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern\ssb-decomp-re">
+      <UniqueIdentifier>{525928ff-8159-5169-a2b5-15c973002823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern\ssb-decomp-re\src">
+      <UniqueIdentifier>{27fca2ad-1262-5d48-ba42-58e868a56338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern\ssb-decomp-re\src\lb">
+      <UniqueIdentifier>{b3111abd-6b9d-5aaa-9543-eafb8cbca8b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern\ssb-decomp-re\src\libultra">
+      <UniqueIdentifier>{74066c7c-2011-5377-be4b-8636e780ad97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern\ssb-decomp-re\src\libultra\gu">
+      <UniqueIdentifier>{712211c8-d41b-50ff-801e-568bd26fe484}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="extern\ssb-decomp-re\src\sys">
+      <UniqueIdentifier>{cfc8c891-47b1-5041-a03d-a924683318f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{a8a5759f-4df2-5d9d-8a95-c8b51fbdb0f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc">
+      <UniqueIdentifier>{3a6ff4f0-fe74-5138-8ffc-1f0eb8dd3933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\aica">
+      <UniqueIdentifier>{9bfc0223-7651-591f-b122-79891a99a603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\decomp">
+      <UniqueIdentifier>{bcaed8b1-7b12-5401-8137-fa00b8ec53a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\decomp\PR">
+      <UniqueIdentifier>{a8d73267-c95c-50cd-b854-afebb0cd6f8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\decomp\gr">
+      <UniqueIdentifier>{26f64912-4edf-5cec-a4dd-cc918f1841d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\decomp\gr\grcommon">
+      <UniqueIdentifier>{ca98134b-d9cd-57ca-a1e5-e6ebe1e9bed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\decomp\sc">
+      <UniqueIdentifier>{c45e86e0-0e18-500b-aef4-43486d2157f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\decomp\sys">
+      <UniqueIdentifier>{18f45761-16d2-5036-9ef0-ea93543cdc14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dc\seq">
+      <UniqueIdentifier>{a1c0016e-a5b1-5e2e-a7aa-a279fb82241e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{2fd86a27-a390-50f8-8ad2-196fa72e8295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\ssb64">
+      <UniqueIdentifier>{853fcbe1-c141-5211-8cb9-c328d5907c6f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Platform\xbox\aica\aica_bus_xbox.c">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\aica\aica_fw_seqsyn.c">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\aica\aica_fw_xbox.c">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\aica\aica_mixer_xbox.c">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_fs_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_log_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_maple_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_sys_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_thread_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_vmu_pkg.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\kos_vmu_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\overlay_bounds_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\pvr_xbox.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\xbox_main.c">
+      <Filter>Platform\xbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\abs_symbols.c">
+      <Filter>Platform\xbox\gen</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\main.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\fighter.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\input.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\stage.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftcommon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftmanager.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftmain.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftparam.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftshadow.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftcomputer.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\gmcollision.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommondata.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpublic.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftphysics.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftcommontwister.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grhyrule.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grjungle.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftcommontaru.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grzebes.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\gryoster.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grpupupu.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grinishie.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grcastle.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\gryamabuki.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grsector.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\grbonus3.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonstopceil.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommondownforwardback.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommondownattack.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonrebound.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommoncliffattack.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonlandingair.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonfallspecial.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommondokan.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommoncapturecaptain.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommoncaptureyoshi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommoncapture.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommoncapturekirby.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftmariospeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeyspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpurinspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbyspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpurinspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopypurinspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftmariospecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftmariospecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftfoxspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpurinspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeyspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftsamusspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcaptainspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftsamusspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcaptainspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftyoshispeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeyspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcaptainspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftsamusspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftfoxspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftfoxspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftyoshispecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftyoshispecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbyspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbyspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopymariospecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopyfoxspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopysamusspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopydonkeyspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopycaptainspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopyyoshispecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftlinkspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftlinkspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopylinkspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftlinkspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpikachuspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopypikachuspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpikachuspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpikachuspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftnessspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftnessspecialhi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftnessspeciallw.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbycopynessspecialn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowfwait.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowfwalk.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowfturn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowfkneebend.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowffall.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowflanding.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowfdamage.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkeythrowff.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirbythrowf.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonattack100.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonjumpaerial.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonsquat.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonfall.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonpass.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonget.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonitemthrow.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonitemswing.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonitemshoot.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\fthammer.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonhammerfall.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonhammerkneebend.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonhammerlanding.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonhammerturn.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftcommonhammerwalk.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosscommon.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosswait.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossappear.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossdeadcenter.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossdeadleft.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossdeadright.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossdefault.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossdrill.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossgootsubusudown.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossgootsubusuend.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossgootsubusuup.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossgootsubusuwait.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossharau.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosshippataku.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossmove.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokuhikouki1.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokuhikouki2.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokuhikouki3.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokukouki.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokupunch1.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokupunch2.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokupunch3.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokutsubushi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossokutsubushistart.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosstsutsuku1.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosstsutsuku2.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosstsutsuku3.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosswalk.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosswalkloop.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosswalkshoot.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbosswalkwait.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossyubideppou1.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossyubideppou2.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftbossyubideppou3.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftmario.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftluigi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftfox.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpurin.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftsamus.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftyoshi.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftkirby.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftlink.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftpikachu.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftdonkey.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftness.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftboss.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpmariofireball.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpfoxblaster.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpsamusbomb.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpyoshistar.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpsamuschargeshot.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpyoshieggthrow.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpkirbycutter.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wplinkboomerang.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wplinkspinattack.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wppikachuthunderjolt.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wppikachuthunder.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpnesspkfire.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpnesspkthunder.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\itnesspkfire.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\itlinkbomb.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\wpbossbullet.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ifcommon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ifscreenflash.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\gmcolscripts.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ftdisplaymain.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scmanager.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scmanagerdata.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scvsbattle.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scvsresults.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scautodemo.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scexplain.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvending.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scstaffroll.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningroom.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningportraits.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningmario.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningdonkey.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningsamus.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeninglink.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningyoshi.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningkirby.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningfox.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningpikachu.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningrun.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningcliff.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningyamabuki.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningjungle.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningyoster.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningsector.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningstandoff.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningclash.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mvopeningnewcomers.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mntitle.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnmodeselect.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mn1pmode.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnvsmode.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnvsoptions.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnplayersvs.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnplayers1ptraining.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1ptrainingmode.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnplayers1pgame.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnplayers1pbonus.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pchallenger.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pintro.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pgame.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pbonusstage.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pstageclear.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pgameboss.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sc1pmanager.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mn1pcontinue.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnmaps.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnmessage.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnvsitemswitch.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mndata.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnvsrecord.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mncharacters.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnsoundtest.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnoption.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnscreenadjust.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnbackupclear.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mncongra.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnnocontroller.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\dcmemcard.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mnstartup.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scsubsysfighter.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\scsubsysdata.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\lbfade.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\scsubsyscontroller.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\gmcommon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sprite.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\camanim.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\gmcamera.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\lbcommon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mpcommon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\utils.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\vector.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\wpmanager.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\wpmain.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\wpprocess.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\wpdisplay.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\wpmap.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\wpattrs.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmanager.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itempack.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itemmodel.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmain.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itprocess.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itvisuals.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itdisplay.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmap.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itbox.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ittaru.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itcapsule.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itegg.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmball.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmew.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ittosakinto.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itsawamura.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itkabigon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmlucky.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itnyars.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itdogas.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itiwark.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itstarmie.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itlizardon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itspear.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itkamex.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itpippi.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itstar.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ittomato.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itheart.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itsword.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itbat.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ithammer.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itharisen.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itfflower.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itlgun.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itstarrod.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itgshell.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itrshell.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itnbumper.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itgbumper.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itpowerblock.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itpakkun.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itglucky.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itporygon.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmarumine.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ithitokage.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itfushigibana.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ittarget.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\ittarubomb.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itmsbomb.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\itbombhei.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\gmrumble.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\mpshim.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\mpcollision.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\mpprocess.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\bgm.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\bgmbank.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\fgm.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\syaudio.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sndres.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\taskman.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\malloc.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\objman.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\objhelper.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\objscript.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\objanim.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\interp.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\ftanim.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\lbtransition.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\lb\lbbackup.c">
+      <Filter>extern\ssb-decomp-re\src\lb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\sysshim.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\stackguard.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\textguard.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\vmusave.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\vmucard.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\dctext.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\vmunotice.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\objdisplay.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\objmodel.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\clip.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\overlay.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\assetroot.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\disctrace.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\loadcensus.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\introcrowd.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\primdump.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\dma.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\lbparticle.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\lbpartex.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\lbpdraw.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\efdisplay.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\efmanager.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform\xbox\gen\tu\efparticle.c">
+      <Filter>Platform\xbox\gen\tu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\efground.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\sys\matrix.c">
+      <Filter>extern\ssb-decomp-re\src\sys</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\ssb64\sintable.c">
+      <Filter>src\game\ssb64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\ssb64\gusinf.c">
+      <Filter>src\game\ssb64</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\ssb64\gucosf.c">
+      <Filter>src\game\ssb64</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\libultra\gu\mtxutil.c">
+      <Filter>extern\ssb-decomp-re\src\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\libultra\gu\mtxcatf.c">
+      <Filter>extern\ssb-decomp-re\src\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\libultra\gu\mtxxfmf.c">
+      <Filter>extern\ssb-decomp-re\src\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="extern\ssb-decomp-re\src\libultra\gu\normalize.c">
+      <Filter>extern\ssb-decomp-re\src\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\dcaica.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\bgmarm.c">
+      <Filter>src\dc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\seq\seqprep.c">
+      <Filter>src\dc\seq</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dc\seq\seqcore.c">
+      <Filter>src\dc\seq</Filter>
+    </ClCompile>
+    <ClInclude Include="Platform\xbox\aica.h">
+      <Filter>Platform\xbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\aica_cmd_iface.h">
+      <Filter>Platform\xbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos.h">
+      <Filter>Platform\xbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\pvr_texdecode.h">
+      <Filter>Platform\xbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\xbox_xtl.h">
+      <Filter>Platform\xbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\aica\aica_decode.h">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\aica\aica_reverb_net.h">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\aica\aica_xbox.h">
+      <Filter>Platform\xbox\aica</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\arch\arch.h">
+      <Filter>Platform\xbox\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\arch\irq.h">
+      <Filter>Platform\xbox\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\arch\rtc.h">
+      <Filter>Platform\xbox\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\arch\stack.h">
+      <Filter>Platform\xbox\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\arch\timer.h">
+      <Filter>Platform\xbox\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\arch\types.h">
+      <Filter>Platform\xbox\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\g2bus.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\maple.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\pvr.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\spu.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\sq.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\video.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\vmu_pkg.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\vmufs.h">
+      <Filter>Platform\xbox\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\maple\controller.h">
+      <Filter>Platform\xbox\dc\maple</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\maple\purupuru.h">
+      <Filter>Platform\xbox\dc\maple</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\maple\vmu.h">
+      <Filter>Platform\xbox\dc\maple</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\sound\aica_comm.h">
+      <Filter>Platform\xbox\dc\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\dc\sound\sound.h">
+      <Filter>Platform\xbox\dc\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\cdefs.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\cond.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\dbgio.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\dbglog.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\fs.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\mm.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\mutex.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\sem.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\xbox\kos\thread.h">
+      <Filter>Platform\xbox\kos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\aicamix.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\assetroot.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\be.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\bgm.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\bgmarm.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\bgmbank.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\camanim.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\clip.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\db.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\dcaica.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\dcmemcard.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\dcpvr.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\dcstrings.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\dctext.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\disctrace.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\dma.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\efground.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\efmanager.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\fgm.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\fighter.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\ftcommon.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\ftdisplaymain.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\ftshade.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\ftshadow.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\gmcamera.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\gmcommon.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\grwallpaper.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\ifcommon.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\input.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\introcrowd.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\itemmodel.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\itemoffsets.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\itempack.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\itmonster.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\lbcommon.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\lbpartex.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\lbparticle.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\lbpdraw.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\lbptrace.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\loadcensus.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mn1pcontinue.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mn1pmode.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnbackupclear.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mncharacters.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mncongra.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mndata.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnmaps.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnmessage.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnmodeselect.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnnocontroller.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnoption.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnplayers1pbonus.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnplayers1pgame.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnplayers1ptraining.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnplayersvs.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnscreenadjust.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnsoundtest.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnstartup.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mntitle.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnvsitemswitch.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnvsmode.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnvsoptions.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mnvsrecord.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mpcommon.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mtx.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvending.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningclash.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningcliff.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningdonkey.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningfox.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningjungle.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningkirby.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeninglink.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningmario.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningnewcomers.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningpikachu.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningportraits.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningroom.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningrun.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningsamus.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningsector.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningstandoff.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningyamabuki.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningyoshi.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\mvopeningyoster.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\objmodel.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\objpvr.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\overlay.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\perf.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\primdump.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pbonusstage.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pchallenger.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pgame.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pgameboss.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pintro.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pmanager.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1pstageclear.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sc1ptrainingmode.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scautodemo.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scexplain.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scmanager.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scport.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scprefetch.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scstaffroll.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scvsbattle.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\scvsresults.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sndres.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\sprite.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\stackguard.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\stage.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\syaudio.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\taskman.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\textguard.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\vmucard.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\vmunotice.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\vmusave.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\wpattrs.h">
+      <Filter>src\dc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\aica\seqsyn.h">
+      <Filter>src\dc\aica</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\aica\shared.h">
+      <Filter>src\dc\aica</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\macros.h">
+      <Filter>src\dc\decomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\reloc_data.h">
+      <Filter>src\dc\decomp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\PR\os.h">
+      <Filter>src\dc\decomp\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\PR\ultratypes.h">
+      <Filter>src\dc\decomp\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\gr\ground.h">
+      <Filter>src\dc\decomp\gr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\gr\grcommon\grjungle.h">
+      <Filter>src\dc\decomp\gr\grcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\gr\grcommon\gryamabuki.h">
+      <Filter>src\dc\decomp\gr\grcommon</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\sc\scene.h">
+      <Filter>src\dc\decomp\sc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\decomp\sys\utils.h">
+      <Filter>src\dc\decomp\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\seq\seqcore.h">
+      <Filter>src\dc\seq</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dc\seq\seqprep.h">
+      <Filter>src\dc\seq</Filter>
+    </ClInclude>
+    <None Include="build.bat" />
+    <None Include="setup.py" />
+    <None Include="rxdk.project.json" />
+    <None Include="README.md" />
+    <None Include="Platform\xbox\titleimage.rdf">
+      <Filter>Platform\xbox</Filter>
+    </None>
+    <None Include="Platform\xbox\saveimage.rdf">
+      <Filter>Platform\xbox</Filter>
+    </None>
+  </ItemGroup>
+</Project>

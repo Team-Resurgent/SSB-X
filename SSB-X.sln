@@ -1,8 +1,9 @@
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ssb64x", "ssb64x.vcxproj", "{52A4D51C-B137-52FF-B64D-25D13693AA17}"
+VisualStudioVersion = 17.0.0.0
+MinimumVisualStudioVersion = 10.0.0.0
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SSB-X", "SSB-X.vcxproj", "{52A4D51C-B137-52FF-B64D-25D13693AA17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

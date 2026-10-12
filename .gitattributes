@@ -7,3 +7,5 @@
 # Visual Studio's own files keep Windows endings
 *.sln     text eol=crlf
 *.vcxproj text eol=crlf
+*.bat     text eol=crlf
+*.filters text eol=crlf

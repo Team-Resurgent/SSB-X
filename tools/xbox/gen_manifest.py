@@ -300,9 +300,11 @@ def main():
         "configurations": {"Debug": cfg(True), "Release": cfg(False)},
     }
     out = os.path.join(ROOT, "rxdk.project.json")
-    with open(out, "w", encoding="utf-8", newline="\n") as f:
-        json.dump(manifest, f, indent=2)
-        f.write("\n")
+    text = json.dumps(manifest, indent=2) + "\n"
+    old = open(out, encoding="utf-8").read() if os.path.isfile(out) else None
+    if old != text:             # unchanged, it keeps its time (the RXDK extension watches it)
+        with open(out, "w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
     print("gen_manifest: %d sources (%d game objects, %d wrapped, %d overlay, %d dropped)"
           % (len(sources), len(order), len(wrapped), len(ovl),
              len([o for o in order if o in DROP])))
